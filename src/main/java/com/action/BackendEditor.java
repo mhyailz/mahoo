@@ -36,7 +36,7 @@ public class BackendEditor {
     	insertMap.put("articleName", articleName);
     	insertMap.put("articleContent", articleContent);
     	insertMap.put("articleSortId", articleSortId);
-    	articleService.insertArticle(insertMap);
+    	articleService.insertArticle(insertMap);;
 		ModelAndView mv = new ModelAndView("backendArticle/backendEditorSuccess");
 		return mv;
 	}
