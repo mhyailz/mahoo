@@ -1,0 +1,144 @@
+/**--------------
+	author: mahoo
+	time : 2014-03-25
+	version: 0.1
+
+---------------**/
+
+/**
+	these are common utils
+**/
+.flt-lf	  {float 		: left ;}
+.flt-rt	  {float 		: right;}
+
+* html .clearfix {height: 1%;}
+body{
+	font-family: Monaco,Menlo,Consolas,"Courier New",monospace;
+	font-size: 12px;
+}
+a,ul,li{
+	text-decoration:none;
+	color:#7d7e7e;
+}
+
+.clearfix:after {
+	visibility: hidden;
+	display: block;
+	height: 0;
+	clear: both;
+	content: ".";
+}
+#all-content{
+	position: releative;
+	margin-left : auto;
+	margin-right: auto;
+	width: 100%;
+	background: #fff;
+}
+.header-title{
+	min-height:144px !important;
+	min-width:1300px;
+	width:inherit;
+	border-bottom:1px solid #eee;
+}
+.header-title .header-title-content{
+	padding-top:35px;
+	margin-left:auto;
+	margin-right:auto;
+	width:90%;
+}
+.header-title-nav{
+	padding-top:20px;
+	margin-left: 20%;
+}
+.header-title-nav a{
+	display:inline-block;
+	padding:2px 40px;
+	border-right:1px solid #2a2a2a;
+	line-height: 20px;
+	font-size:14px; 
+	font-family : Cambria;
+}
+.header-title-nav a:hover{
+	color:#222;
+	background:rgba(230,230,230,.5);
+}
+
+.header-title-nav .header-title-nav-lst{border-right:0;}
+
+.header-title-search{
+	overflow:hidden;
+	margin-top: 14px;
+	min-width: 200px;
+	line-height: 30px;
+	border-radius: 3px;
+}
+.header-title-search i{
+	float: right;
+	margin-right: 23px;
+	line-height: 32px;
+	color: #ccc;
+}
+.header-title-search .header-title-search-ipt{
+	width: 80%;
+	padding-left: 1em;
+}
+.header-title-search input[type="text"]{
+	width:100%;
+	border:0;
+	font-family: Cambria;
+}
+.draw-main{
+	width: 90%;
+	margin-left:auto;
+	margin-right:auto;
+	margin-top:50px;
+}
+.draw-article{
+	float: left;
+	width: 100%;
+}
+.draw-pre:hover{
+	box-shadow: 0 0 3px #ccc;
+	border-bottom-color:rgba(204, 204, 204, 0);
+}
+.draw-pre{
+	margin:0 auto 60px;
+	border: 1px solid #DFDFDF ;
+	border-radius: 3px;
+}
+.draw-pre .article-title{
+	padding: 25px;
+	font-size: 24px;
+}
+
+.article-title a{
+	color: #038181;
+}
+.article-title a:hover{
+	border-bottom: 2px solid;
+	cursor : pointer;
+} 
+
+.draw-pre .article-comm{
+	padding-left: 25px;
+	color: #b8b7b7;
+}
+.draw-pre .article-text{padding: 25px;}
+
+.article-comm span{margin-right: 10px;}
+
+.article-comm i {margin-right: 5px;}
+
+.article-text p{
+	text-indent: 2em;
+	font-size: 14px;
+	line-height: 30px;
+}
+#to_the_top {
+	display: none;
+	position: fixed;
+	cursor: pointer;
+	bottom: 20px;
+	right: 20px;
+}

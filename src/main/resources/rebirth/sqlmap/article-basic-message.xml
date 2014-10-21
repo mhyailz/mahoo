@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap        
+    PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"        
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+ <sqlMap>
+ 	
+ 	<typeAlias alias="articleBasic" type="com.model.Article" />
+	
+	<resultMap id="articleBasic" class="articleBasic">
+		<result property="id" column="id"/>
+    	<result property="articleName" column="article_name"/>
+		<result property="articleCreateTime" column="article_create_time"/>
+		<result property="articleContent" column="article_content"/>
+		<result property="articleCommentId" column="article_comment_id"/>
+		<result property="articleSortId" column="article_field_id"/>
+    </resultMap>
+ 	
+ 	<select id="findArticleMessageByArticleName" parameterClass="String" resultMap="articleBasic">
+ 		
+ 		<![CDATA[
+ 			select article_name,article_create_time,article_content,article_comment_id,article_sort_id
+			from rebirth.article_message
+			where article_name like '%'||#name#||'%'
+			or article_content like '%'||#name#||'%'
+ 		]]>
+ 		
+ 	</select>
+ 	
+ 	<select id="findArticleMessageWithPage" parameterClass="map" resultMap="articleBasic">
+ 		
+ 		<![CDATA[
+ 			select id,article_name,article_create_time,article_content,article_comment_id,article_field_id
+			from rebirth.article_message
+			where is_deleted = 0
+			order by update_time desc
+			limit #start#,#end#
+ 		]]>
+ 		
+ 	</select>
+ 	
+ 	<select id="findArticleMessageWithId" parameterClass="map" resultMap="articleBasic">
+ 		
+ 		<![CDATA[
+ 			select id,article_name,article_create_time,article_content,article_comment_id,article_field_id
+			from rebirth.article_message
+			where is_deleted = 0
+			and id = #id#
+ 		]]>
+ 		
+ 	</select>
+ 	
+ 	<insert id="insertNewArticle" parameterClass="map" >
+ 		<![CDATA[
+ 			
+ 			insert into rebirth.article_message
+ 			(article_name,
+ 			 article_content,
+ 			 article_field_id,
+ 			 article_create_time,
+ 			 create_time,
+ 			 update_time,
+ 			 version)
+ 			VALUES 
+ 			(#articleName#,
+ 			#articleContent#,
+ 			#articleSortId#,
+ 			now(),
+ 			now(),
+ 			now(),
+ 			0)
+			
+ 		]]>
+ 	</insert>
+ 	
+ 	<!--
+ 	<select id="selectNewTopEight" resultClass="blogBasic">
+ 		<![CDATA[
+ 			select blog_no,blog_title,blog_href 
+ 			from blog_basic_message 
+ 			order by blog_date desc 
+ 			limit 0,8
+ 		]]>
+ 	</select>
+ 	
+ 	<select id="selectSortBlogNumber" parameterClass="String" resultClass="blogNumber">
+ 	
+ 		<![CDATA[
+ 		
+ 			select Count(no) as countNo 
+ 			from blog_basic_message
+ 			where blog_type = #selectType#
+ 		
+ 		]]>
+ 	
+ 	</select>
+ 	
+ 	 	
+ 	<select id="selectChangeBlogPage" parameterClass="java.util.Map"  resultClass="blogMessage">
+ 		<![CDATA[
+ 			
+ 			select bm.no,bm.blog_basic_content,bm.blog_pv,bm.blog_comment_no,bbm.blog_title,date_format(bbm.blog_date,'%Y-%m-%d') as blog_date,bbm.blog_href
+			from blog_message as bm, blog_basic_message as bbm
+			where bm.no = bbm.blog_no
+			and bbm.blog_type = #selectType#
+			order by bbm.blog_date desc
+
+			limit #number#,4
+			
+ 		]]>
+ 		
+ 	</select>
+ 	
+ 	<select id="selectIndexAllBlogs" parameterClass="int" resultClass="blogMessage">
+ 		<![CDATA[
+ 			
+ 			select bm.no,bm.blog_basic_content,bm.blog_pv,bm.blog_comment_no,bbm.blog_title,date_format(bbm.blog_date,'%Y-%m-%d') as blog_date,bbm.blog_href
+			from blog_message as bm, blog_basic_message as bbm
+			where bm.no = bbm.blog_no
+			order by bbm.blog_date desc
+
+			limit #number#,4
+			
+ 		]]>
+ 		
+ 	</select>
+ 	
+ 	<select id="selectOneArticle" parameterClass="int" resultClass="blogMessage">
+ 		<![CDATA[
+ 			
+ 			select bm.no,bm.blog_basic_content,bm.blog_pv,bm.blog_comment_no,bbm.blog_title,date_format(bbm.blog_date,'%Y-%m-%d') as blog_date,bbm.blog_href
+			from blog_message as bm, blog_basic_message as bbm
+			where bbm.blog_no = #number#
+			and bm.no = #number#
+			
+ 		]]>
+ 	</select>
+ 	
+ 	<insert id="insertBlogMessage" parameterClass="blogMessage" >
+ 		<![CDATA[
+ 			
+ 			insert into blog_message(no,blog_basic_content,blog_pv,blog_comment_no)
+ 			values (#no#,#blog_basic_content#,#blog_pv#,#blog_comment_no#)
+			
+ 		]]>
+ 	</insert>
+ 	
+ 	<insert id="insertBasicBlogMessage" parameterClass="blogMessage" >
+ 		<![CDATA[
+ 			
+ 			insert into blog_basic_message(blog_no,blog_title,blog_date,blog_href,blog_type)
+ 			values (#no#,#blog_title#,#blog_date#,#blog_href#,#blog_type#)
+			
+ 		]]>
+ 	</insert>
+ 	
+ 	-->
+ </sqlMap>
+
+

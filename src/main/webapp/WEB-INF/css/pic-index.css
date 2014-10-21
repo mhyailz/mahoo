@@ -1,0 +1,207 @@
+/**--------------
+	author: mahoo
+	time : 2014-03-25
+	version: 0.1
+
+---------------**/
+
+/**
+	these are common utils
+**/
+.flt-lf	  {float 		: left ;}
+.flt-rt	  {float 		: right;}
+
+* html .clearfix {height: 1%;}
+body{
+	font-family: Monaco,Menlo,Consolas,"Courier New",monospace;
+	font-size: 12px;
+}
+a,ul,li{
+	text-decoration:none;
+	color:#7d7e7e;
+}
+
+.clearfix:after {
+	visibility: hidden;
+	display: block;
+	height: 0;
+	clear: both;
+	content: ".";
+}
+#all-content{
+	position: relative;
+	margin-left : auto;
+	margin-right: auto;
+	width: 100%;
+	background: #fff;
+}
+#head{
+	height: 60px;
+	background: #f9f9f9;
+	border-bottom: solid 1px #f3f3f3;
+	font-family: \5FAE\8F6F\96C5\9ED1,\5B8B\4F53,Arial;
+}
+#head .logo{
+	font-size : 25px;
+	padding : 15px 0;
+	color : #09A0B4;
+}
+.head-content{
+	width: 980px;
+	margin: 0 auto;
+}
+.pic-contain{
+	width: 980px;
+	margin: 0 auto;
+	padding-top: 20px;
+	min-height: 500px;
+}
+.logo-txt{
+	display: block;
+	width: 155px;
+	height: 34px;
+	background: url(../img/logo.gif) no-repeat;
+	font-size: 0;
+}
+/****************left *****************/
+.g-side {
+	float: left;
+}
+.m-setnav {
+	margin-top: 20px;
+}
+.m-setnav li {
+	position: relative;
+	zoom: 1;
+	width: 110px;
+	font-size: 14px;
+}
+.m-setnav li .js-cur {
+	color: #fff;
+	margin-bottom: 8px;
+	margin-top: 8px;
+	background-color: #3eb1f0;
+}
+
+.m-setnav li a:hover{
+	text-decoration:none;
+	background-color: #F3F0F0;
+}
+
+.m-setnav li a {
+	position: relative;
+	zoom: 1;
+	display: block;
+	line-height: 29px;
+	color: #666;
+	padding: 0 0 0 10px;
+	font-size: 14px;
+	font-family: "宋体";
+	background-color: #f8f8f8;
+}
+.m-setnav li .js-cur:hover {
+	color: #fff;
+	background-color: #3eb1f0;
+	text-decoration: none;
+}
+.m-setnav li .childItem em {
+	display: inline-block;
+	width: 30px;
+	font-size: 12px;
+	line-height: 22px;
+	font-weight: normal;
+	letter-spacing: 0;
+	font-style: normal;
+}
+.m-setnav li .childItem em:hover{
+	text-decoration:underline;
+}
+.m-setnav li a .childItem {
+	font-size: 12px;
+	padding-bottom: 8px;
+	letter-spacing: -4px;
+	display: none;
+}
+.m-gallery .pss {
+	zoom: 1;
+	margin-left: 0;
+	margin-right: -13px;
+}
+.m-gallery .pss .w-ps {
+	position: relative;
+	float: left;
+	z-index: 10;
+	width: 200px;
+	margin: 0 10px 10px 0;
+	min-height: 70px;
+	vertical-align: top;
+}
+.thide {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+a, .fc0 {
+	color: #2e75bc;
+}
+
+.m-gallery .pss .w-ps img {
+	width: 200px;
+	height: 200px;
+	padding: 0;
+	border: none;
+}
+.bdc4, .w-help {
+	border-color: #ccc;
+}
+.bdwa {
+	border-width: 1px;
+}
+#photo_show_main_gallery {
+	margin-left: 150px;
+	_margin-left: 137px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+.m-gallery .pss .w-ps .cover {
+	background: #000;
+	opacity: .3;
+	filter: alpha(opacity=50);
+}
+.cover {
+	top: 146px;
+	height: 54px;
+}
+
+.m-gallery .w-ps .detail, .m-gallery .w-ps .cover{
+	position: absolute;
+	left: 0;
+	color: #E20F0F;
+	padding: 0;
+	width: 200px;
+	top: 170px;
+	height: 30px;
+	z-index: 20;
+	-moz-transition-duration: 100ms;
+	-webkit-transition-duration: 100ms;
+	-o-transition-duration: 100ms;
+	transition-duration: 100ms;
+}
+.m-gallery .pss .w-ps .cover:hover{
+	top: 150px;
+	height: 50px;
+	opacity: .7;
+	filter: alpha(opacity=70);
+}
+.m-gallery .pss .w-ps .cover p{
+	color: #fff;
+	padding:6px;
+	font-size: 12px;
+	margin:0;
+}
+.m-gallery .pss .w-ps .cover p a{
+	color:#fff
+}
+.m-gallery .pss .w-ps .cover p a:hover{
+	text-decoration:underline;
+}
