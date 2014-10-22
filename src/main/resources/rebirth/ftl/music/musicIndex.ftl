@@ -45,7 +45,7 @@
 			</div>
 		</header>
 		<div class="draw-main clearfix">
-			<a onclick = "javascript:myspace.addUrl('../music-static/musicList/loveYou.mp3')" >start</a>
+			<a onclick = "javascript:myspace.addUrl('http://mahoo.oss-cn-qingdao.aliyuncs.com/后悔无期.mp3')" >start</a>
 			<a onclick = "javascript:myspace.stopAll()" >stop</a>
 		</div>
 	</div>
