@@ -3,12 +3,12 @@
     <body>
         <form action="/music/upload" method="post">
             <p>
-                <label>标题：</label>
-                <input name="musicName" type="text" />
+                <label>类型：</label>
+                <input name="musicType" type="text" />
             </p>
             <p>
                 <label>文件路径：</label>
-                <input name="musicUrl" type="file" multiple="multiple" />
+                <input name="names" type="file" multiple="multiple" />
             </p>
             <input type="submit" />
         </form>

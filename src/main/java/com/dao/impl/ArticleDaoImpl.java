@@ -27,6 +27,14 @@ public class ArticleDaoImpl implements ArticleDao {
 		map.put("id", id);
 		return sqlMapClientTemplate.queryForList("findArticleMessageWithId",map);
 	}
+
+    @Override
+    public void insertMusic(String name, int musicType) {
+        Map<String, Object> map = new HashMap<String,Object>();
+        map.put("name",name);
+        map.put("musicType",musicType);
+        sqlMapClientTemplate.insert("insertMusics",map);
+    }
 	
 	
 	/***********************get set **********************/
@@ -44,5 +52,7 @@ public class ArticleDaoImpl implements ArticleDao {
 		sqlMapClientTemplate.insert("insertNewArticle",insertMap);
 	}
 
-	
+
+
+
 }

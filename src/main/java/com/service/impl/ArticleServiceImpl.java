@@ -39,4 +39,9 @@ public class ArticleServiceImpl implements ArticleService {
 		
 	}
 
+    @Override
+    public void insertMusic(String name, int musicType) {
+        articleDao.insertMusic(name,musicType);
+    }
+
 }

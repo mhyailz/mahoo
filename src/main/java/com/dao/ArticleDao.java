@@ -33,4 +33,11 @@ public interface ArticleDao {
 	 * @param insertMap
 	 */
 	public void insertArticle(Map<String, Object> insertMap);
+
+    /**
+     *
+     * @param name
+     * @param musicType
+     */
+    public void insertMusic(String name, int musicType);
 }

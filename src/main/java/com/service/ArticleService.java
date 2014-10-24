@@ -28,4 +28,12 @@ public interface ArticleService {
 	 */
 	public void insertArticle(Map<String, Object> insertMap);
 
+    /**
+     *
+     * @param name
+     * @param musicType
+     */
+    public void insertMusic(String name, int musicType);
+
+    public int getMusicTotalCount(int musicType);
 }

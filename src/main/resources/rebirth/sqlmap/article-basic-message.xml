@@ -68,9 +68,25 @@
  			now(),
  			now(),
  			0)
-			
  		]]>
  	</insert>
+
+    <insert id="insertMusics" parameterClass="map" >
+        <![CDATA[
+ 			insert into rebirth.music_message
+ 			(name,
+ 			 music_type,
+ 			 create_time,
+ 			 update_time,
+ 			 version)
+ 			VALUES
+ 			(#name#,
+ 			#musicType#,
+ 			now(),
+ 			now(),
+ 			0)
+ 		]]>
+    </insert>
  	
  	<!--
  	<select id="selectNewTopEight" resultClass="blogBasic">
