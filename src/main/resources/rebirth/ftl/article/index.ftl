@@ -47,10 +47,9 @@
                 <i class="fa-pied-piper-alt fa-4x"></i>
             </div>
             <div class="header-title-nav flt-lf clearfix">
-                <a href="../index" title="Blog" rel="">Blog</a>
+                <a href="../index" title="Blog" rel="" class="onhover">Blog</a>
                 <a href="../music/index" title="Music" rel="">Music</a>
-                <a href="#" title="Wap" rel="">Wap</a>
-                <a href="#" title="Game" rel="" class="header-title-nav-lst">Game</a>
+                <a href="#" title="About" rel="">About</a>
             </div>
         </div>
     </header>
@@ -105,6 +104,15 @@
         paths:{'plugs' :  '../sea-modules/','syntaxhighlighter' : '../syntaxhighlighter/scripts/'},
         alias: {shCore : 'syntaxhighlighter/shCore.js?version=3.0.83',shBrushJava : 'syntaxhighlighter/shBrushJava.js?version=3.0.83',shBrushCss  : 'syntaxhighlighter/shBrushCss.js?version=3.0.83'}
     });seajs.use(["./js/init.js?version=0.1","./js/jquery.scrollToTop.min.js?version=1.0"]);
+</script>
+<script>
+    var _hmt = _hmt || [];
+    (function() {
+        var hm = document.createElement("script");
+        hm.src = "//hm.baidu.com/hm.js?406db5283b6d6ae4872b50b7e57fdbf1";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
 </script>
 </body>
 </html>

@@ -36,12 +36,11 @@
 				 <div class="header-logo  flt-lf">
 				 	<i class="fa-pied-piper-alt fa-4x"></i>
 				 </div>
-				 <div class="header-title-nav flt-lf clearfix">
-				 	<a href="../index" title="Blog" rel="">Blog</a>
-				 	<a href="../music/index" title="Music" rel="">Music</a>
-				 	<a href="#" title="Wap" rel="">Wap</a>
-				 	<a href="#" title="Game" rel="" class="header-title-nav-lst">Game</a>
-				 </div>
+                <div class="header-title-nav flt-lf clearfix">
+                    <a href="../index" title="Blog" rel="">Blog</a>
+                    <a href="../music/index" title="Music" rel="" class="onhover">Music</a>
+                    <a href="#" title="About" rel="">About</a>
+                </div>
 			</div>
 		</header>
 		<div class="draw-main clearfix">

@@ -44,4 +44,9 @@ public class ArticleServiceImpl implements ArticleService {
         articleDao.insertMusic(name,musicType);
     }
 
+    @Override
+    public int getMusicTotalCount(int musicType) {
+        return 0;
+    }
+
 }

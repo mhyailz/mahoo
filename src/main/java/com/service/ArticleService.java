@@ -35,5 +35,10 @@ public interface ArticleService {
      */
     public void insertMusic(String name, int musicType);
 
+    /**
+     *
+     * @param musicType
+     * @return
+     */
     public int getMusicTotalCount(int musicType);
 }
