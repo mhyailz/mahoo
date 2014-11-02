@@ -35,9 +35,29 @@ public class ArticleDaoImpl implements ArticleDao {
         map.put("musicType",musicType);
         sqlMapClientTemplate.insert("insertMusics",map);
     }
-	
-	
-	/***********************get set **********************/
+
+    @Override
+    public int getMusicTotalCount(int musicType ) {
+        Map<String, Object> map = new HashMap<String,Object>();
+        map.put("musicType",musicType);
+        Object o = sqlMapClientTemplate.queryForObject("getMusicTotalCount", map);
+        if(o!=null){
+            return ((Integer) o).intValue();
+        }else{
+            return 0;
+        }
+    }
+
+    @Override
+    public String getMusicNameByNumber(int number,int musicType) {
+        Map<String, Object> map = new HashMap<String,Object>();
+        map.put("number",number);
+        map.put("musicType",musicType);
+        return (String) sqlMapClientTemplate.queryForObject("getMusicNameByNumber", map);
+    }
+
+
+    /***********************get set **********************/
 	
 	public SqlMapClientTemplate getSqlMapClientTemplate() {
 		return sqlMapClientTemplate;

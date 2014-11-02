@@ -65,15 +65,6 @@
 							<span data-title="time">
 								<i class="fa-clock-o"></i>${articleList.articleCreateTime?if_exists}
 							</span>
-							<span data-title="sort">
-								<i class="fa-list-ul"></i>${articleList.articleSortId?if_exists}
-							</span>
-							<span data-title="view">
-								<i class="fa-eye"></i>25
-							</span>
-							<span data-title="view">
-								<i class="fa-volume-up"></i>35
-							</span>
                     </div>
                     <div class="article-text">
                     ${articleList.articleContent?if_exists}

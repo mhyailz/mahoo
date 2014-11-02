@@ -41,4 +41,11 @@ public interface ArticleService {
      * @return
      */
     public int getMusicTotalCount(int musicType);
+
+    /**
+     *
+     * @param number
+     * @return
+     */
+    public String getMusicNameByNumber(int number,int musicType);
 }

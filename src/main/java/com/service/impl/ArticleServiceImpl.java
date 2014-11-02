@@ -46,7 +46,13 @@ public class ArticleServiceImpl implements ArticleService {
 
     @Override
     public int getMusicTotalCount(int musicType) {
-        return 0;
+        return articleDao.getMusicTotalCount(musicType);
     }
+
+    @Override
+    public String getMusicNameByNumber(int number,int musicType) {
+        return articleDao.getMusicNameByNumber(number,musicType);
+    }
+
 
 }

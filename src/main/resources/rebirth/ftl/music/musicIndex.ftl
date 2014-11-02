@@ -57,7 +57,13 @@
         $("#start").click(function(){
             var preString = "http://mahoo.oss-cn-qingdao.aliyuncs.com/";
             $.ajax({
-                url : ""
+                url : "/music/addMusic",
+                data : {
+                    musicType : 1
+                },
+                success : function(data){
+                    myspace.addUrl(preString + "music/轻音乐/" + data);
+                }
             })
         })
 

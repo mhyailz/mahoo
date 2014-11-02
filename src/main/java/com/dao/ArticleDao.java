@@ -40,4 +40,18 @@ public interface ArticleDao {
      * @param musicType
      */
     public void insertMusic(String name, int musicType);
+
+    /**
+     *
+     * @param musicType
+     * @return
+     */
+    public int getMusicTotalCount(int musicType);
+
+    /**
+     *
+     * @param number
+     * @return
+     */
+    public  String getMusicNameByNumber(int number ,int musicType);
 }

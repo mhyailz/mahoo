@@ -55,15 +55,13 @@ public class MusicIndex {
     @RequestMapping(value="addMusic", method = RequestMethod.GET)
     public @ResponseBody  String addMusic(@RequestParam(value = "musicType", required = false) int musicType){
 
-
         int totalCount = articleService.getMusicTotalCount(musicType);
 
         int number = (int) (Math.random() * totalCount);
 
-        String name="";
+        String name = articleService.getMusicNameByNumber(number,musicType);
 
         return  name;
     }
-
 
 }
