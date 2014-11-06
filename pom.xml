@@ -28,7 +28,6 @@
         <quartz.version>2.2.0</quartz.version>
         <servlet-api.version>2.4</servlet-api.version>
         <spring.version>3.2.1.RELEASE</spring.version>
-        <aliyun-openservices.version>1.2.2</aliyun-openservices.version>
     </properties>
     <dependencies>
         <!--  -->
@@ -208,11 +207,6 @@
             <groupId>org.springframework</groupId>
             <artifactId>spring-webmvc-portlet</artifactId>
             <version>${spring.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>com.aliyun.openservices</groupId>
-            <artifactId>aliyun-openservices</artifactId>
-            <version>${aliyun-openservices.version}</version>
         </dependency>
     </dependencies>
 
