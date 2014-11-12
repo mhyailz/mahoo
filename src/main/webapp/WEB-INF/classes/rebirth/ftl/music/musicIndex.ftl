@@ -18,8 +18,9 @@
 	<!-- icon -->
 	<link rel="shortcut icon" href="../img/favicon.png">
     <!--[if lt IE 9]>
-      <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+
+    <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
     
     <!--jquery -->
@@ -35,16 +36,15 @@
 				 <div class="header-logo  flt-lf">
 				 	<i class="fa-pied-piper-alt fa-4x"></i>
 				 </div>
-				 <div class="header-title-nav flt-lf clearfix">
-				 	<a href="../index" title="Blog" rel="">Blog</a>
-				 	<a href="../music/index" title="Music" rel="">Music</a>
-				 	<a href="#" title="Wap" rel="">Wap</a>
-				 	<a href="#" title="Game" rel="" class="header-title-nav-lst">Game</a>
-				 </div>
+                <div class="header-title-nav flt-lf clearfix">
+                    <a href="../index" title="Blog" rel="">Blog</a>
+                    <a href="../music/index" title="Music" rel="" class="onhover">Music</a>
+                    <a href="#" title="About" rel="">About</a>
+                </div>
 			</div>
 		</header>
 		<div class="draw-main clearfix">
-			<a onclick = "javascript:myspace.addUrl('../music-static/musicList/loveYou.mp3')" >start</a>
+			<a id ="start">start</a>
 			<a onclick = "javascript:myspace.stopAll()" >stop</a>
 		</div>
 	</div>
@@ -53,5 +53,20 @@
 	        baseDir: '../music-static/baseDir/'
 	    });
 	</script>
+    <script>
+        $("#start").click(function(){
+            var preString = "http://mahoo.oss-cn-qingdao.aliyuncs.com/";
+            $.ajax({
+                url : "/music/addMusic",
+                data : {
+                    musicType : 1
+                },
+                success : function(data){
+                    myspace.addUrl(preString + "music/轻音乐/" + data);
+                }
+            })
+        })
+
+    </script>
 	<script src="../js/music/initPlayer.js?version=0.1"></script>
 </body>

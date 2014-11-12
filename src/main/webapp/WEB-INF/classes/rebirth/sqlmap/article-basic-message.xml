@@ -68,92 +68,43 @@
  			now(),
  			now(),
  			0)
-			
  		]]>
  	</insert>
- 	
- 	<!--
- 	<select id="selectNewTopEight" resultClass="blogBasic">
- 		<![CDATA[
- 			select blog_no,blog_title,blog_href 
- 			from blog_basic_message 
- 			order by blog_date desc 
- 			limit 0,8
- 		]]>
- 	</select>
- 	
- 	<select id="selectSortBlogNumber" parameterClass="String" resultClass="blogNumber">
- 	
- 		<![CDATA[
- 		
- 			select Count(no) as countNo 
- 			from blog_basic_message
- 			where blog_type = #selectType#
- 		
- 		]]>
- 	
- 	</select>
- 	
- 	 	
- 	<select id="selectChangeBlogPage" parameterClass="java.util.Map"  resultClass="blogMessage">
- 		<![CDATA[
- 			
- 			select bm.no,bm.blog_basic_content,bm.blog_pv,bm.blog_comment_no,bbm.blog_title,date_format(bbm.blog_date,'%Y-%m-%d') as blog_date,bbm.blog_href
-			from blog_message as bm, blog_basic_message as bbm
-			where bm.no = bbm.blog_no
-			and bbm.blog_type = #selectType#
-			order by bbm.blog_date desc
 
-			limit #number#,4
-			
+    <insert id="insertMusics" parameterClass="map" >
+        <![CDATA[
+ 			insert into rebirth.music_message
+ 			(name,
+ 			 music_type,
+ 			 create_time,
+ 			 update_time,
+ 			 version)
+ 			VALUES
+ 			(#name#,
+ 			#musicType#,
+ 			now(),
+ 			now(),
+ 			0)
  		]]>
- 		
- 	</select>
- 	
- 	<select id="selectIndexAllBlogs" parameterClass="int" resultClass="blogMessage">
- 		<![CDATA[
- 			
- 			select bm.no,bm.blog_basic_content,bm.blog_pv,bm.blog_comment_no,bbm.blog_title,date_format(bbm.blog_date,'%Y-%m-%d') as blog_date,bbm.blog_href
-			from blog_message as bm, blog_basic_message as bbm
-			where bm.no = bbm.blog_no
-			order by bbm.blog_date desc
+    </insert>
 
-			limit #number#,4
-			
- 		]]>
- 		
- 	</select>
- 	
- 	<select id="selectOneArticle" parameterClass="int" resultClass="blogMessage">
- 		<![CDATA[
- 			
- 			select bm.no,bm.blog_basic_content,bm.blog_pv,bm.blog_comment_no,bbm.blog_title,date_format(bbm.blog_date,'%Y-%m-%d') as blog_date,bbm.blog_href
-			from blog_message as bm, blog_basic_message as bbm
-			where bbm.blog_no = #number#
-			and bm.no = #number#
-			
- 		]]>
- 	</select>
- 	
- 	<insert id="insertBlogMessage" parameterClass="blogMessage" >
- 		<![CDATA[
- 			
- 			insert into blog_message(no,blog_basic_content,blog_pv,blog_comment_no)
- 			values (#no#,#blog_basic_content#,#blog_pv#,#blog_comment_no#)
-			
- 		]]>
- 	</insert>
- 	
- 	<insert id="insertBasicBlogMessage" parameterClass="blogMessage" >
- 		<![CDATA[
- 			
- 			insert into blog_basic_message(blog_no,blog_title,blog_date,blog_href,blog_type)
- 			values (#no#,#blog_title#,#blog_date#,#blog_href#,#blog_type#)
-			
- 		]]>
- 	</insert>
- 	
- 	-->
+    <select id="getMusicTotalCount" parameterClass="map" resultClass="int">
+        <![CDATA[
+          select count(1)
+          from rebirth.music_message
+          where music_type = #musicType#
+        ]]>
+    </select>
+
+    <select id="getMusicNameByNumber" parameterClass="map" resultClass="String">
+        select name
+        from rebirth.music_message
+        where music_type = #musicType#
+        order by id
+        limit #number#,1
+
+    </select>
+
  </sqlMap>
 
 
