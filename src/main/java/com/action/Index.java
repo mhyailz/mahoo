@@ -34,7 +34,7 @@ public class Index {
                 article.setIds(AESEncryptor.enc(article.getId().toString(), SECRETKEY));
             }
         }
-        mv.addObject("artilces", articles);
+        mv.addObject("articles", articles);
         return mv;
     }
     @RequestMapping(value="article", method = RequestMethod.GET)
@@ -59,7 +59,7 @@ public class Index {
                 article.setIds(AESEncryptor.enc(article.getId().toString(), SECRETKEY));
             }
         }
-        mv.addObject("artilces", articles);
+        mv.addObject("articles", articles);
         mv.addObject("isShowComme",1);
         return mv;
     }
