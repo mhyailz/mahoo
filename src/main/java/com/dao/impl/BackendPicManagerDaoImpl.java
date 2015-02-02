@@ -21,7 +21,7 @@ public class BackendPicManagerDaoImpl implements BackendPicManagerDao {
 		map.put("parentId", parentId);
 		
 		return sqlMapClientTemplate.queryForList("getCategoryListByParentId",map);
-		
+
 	}
 
 	@Override

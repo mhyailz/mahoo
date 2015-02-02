@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
   <head>
-    <title>mahoo | All left yesterday.</title>
     <!-- 编码 -->
     <meta charset="utf-8">
     <!-- IE edge -->
@@ -24,15 +23,8 @@
       <div class="header-t">
         <nav class="navbar" role="navigation">
           <ul class="nav navbar-nav" id="navbar-ul">
-            <li class="active"><a href="./index" title="首页"><span class="glyphicon glyphicon-home"></span></a></li>
-            <!-- <li class="active"><a href="./music/index" title="音乐"><span class="glyphicon glyphicon-music"></span></a></li> -->
-            <li class="active"><a href="./about" title="关于"><span class="glyphicon glyphicon-user"></span></a></li>
+            <li class="active"><a href="/index" title="首页"><span class="glyphicon glyphicon-circle-arrow-left"></span></a></li>
           </ul>
-          <form class="navbar-form navbar-right" id="navbar-search" role="search">
-            <div class="form-group">
-              <input type="text" class="form-control" placeholder="search">
-            </div>
-          </form>
         </nav>
       </div>
     </header>
@@ -48,23 +40,25 @@
               <span class="badge">杂谈</span>
             </div>
             <div class="article-bd">${articleList.articleContent?if_exists}</div>
-            <div class="bottom-shade">
-              <a class="glyphicon glyphicon-chevron-right" data-toggle="tooltip" data-placement="right" title="查看详情" href="./item?ids=${articleList.ids?if_exists}"></a>
-            </div>
           </div>
         </#list>
       </#if>
+      <div id="disqus_thread"></div>
+      <script type="text/javascript">
+        var disqus_shortname = 'mahoos';
+        (function () {
+          var dsq = document.createElement('script');
+          dsq.type = 'text/javascript';
+          dsq.async = true;
+          dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+      </script>
     </div>
     <footer>
       <div class="copyright">All left yesterday, the future still need to progress.&copy;&nbsp;mahoo.</div>
     </footer>
-    <div id="to_the_top" ><i class="glyphicon glyphicon-circle-arrow-up"></i></div>
   </body>
-  <!-- scroll -->
-  <script src="/js/jquery.scrollToTop.min.js?version=0.1"></script>
-  <!-- my global javascript -->
-  <script src="/js/global/my-global.js?version=0.1"></script>
-
   <!-- rainbow -->
   <script src="/js/themes/rainbow.min.js?version=0.1"></script>
   <!-- rainbow global -->
