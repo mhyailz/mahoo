@@ -9,10 +9,5 @@
 	<bean id="articleService" name="articleService" class="com.service.impl.ArticleServiceImpl">
 		<property name="articleDao" ref="articleDao"></property>
 	</bean>
-	
-	<bean id="backendPicManagerService" name="backendPicManagerService" class="com.service.impl.BackendPicManagerServiceImpl">
-		<property name="backendPicManagerDao" ref="backendPicManagerDao"></property>
-	</bean>
-
 
 </beans>

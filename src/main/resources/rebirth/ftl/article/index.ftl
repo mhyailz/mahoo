@@ -64,7 +64,6 @@
   <script src="/js/jquery.scrollToTop.min.js?version=0.1"></script>
   <!-- my global javascript -->
   <script src="/js/global/my-global.js?version=0.1"></script>
-
   <!-- rainbow -->
   <script src="/js/themes/rainbow.min.js?version=0.1"></script>
   <!-- rainbow global -->

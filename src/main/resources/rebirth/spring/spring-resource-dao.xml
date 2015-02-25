@@ -8,10 +8,5 @@
 	<bean id="articleDao" class="com.dao.impl.ArticleDaoImpl">
 		<property name="sqlMapClientTemplate" ref="sqlMapClientTemplate"></property>
 	</bean>
-	
-	<bean id="backendPicManagerDao" class="com.dao.impl.BackendPicManagerDaoImpl">
-		<property name="sqlMapClientTemplate" ref="sqlMapClientTemplate"></property>
-	</bean>
-	
 
 </beans>
