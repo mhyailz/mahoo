@@ -8,6 +8,9 @@ public class Article {
 	
 	/**文章名字 **/
 	private String articleName;
+
+    /**文章简短评估 **/
+    private String articleShortContent;
 	
 	/**文章正文**/
 	private String articleContent;
@@ -80,7 +83,14 @@ public class Article {
 	public void setIds(String ids) {
 		this.ids = ids;
 	}
-	
-	
-	
+
+    public String getArticleShortContent() {
+        return articleShortContent;
+    }
+
+    public void setArticleShortContent(String articleShortContent) {
+        this.articleShortContent = articleShortContent;
+    }
+
+
 }

@@ -10,7 +10,8 @@
 		<result property="id" column="id"/>
     	<result property="articleName" column="article_name"/>
 		<result property="articleCreateTime" column="article_create_time"/>
-		<result property="articleContent" column="article_content"/>
+        <result property="articleContent" column="article_content"/>
+		<result property="articleShortContent" column="article_short_content"/>
 		<result property="articleCommentId" column="article_comment_id"/>
 		<result property="articleSortId" column="article_field_id"/>
     </resultMap>
@@ -18,7 +19,7 @@
  	<select id="findArticleMessageByArticleName" parameterClass="String" resultMap="articleBasic">
  		
  		<![CDATA[
- 			select article_name,article_create_time,article_content,article_comment_id,article_sort_id
+ 			select article_name,article_create_time,article_short_content,article_content,article_comment_id,article_sort_id
 			from rebirth.article_message
 			where article_name like '%'||#name#||'%'
 			or article_content like '%'||#name#||'%'
@@ -29,7 +30,7 @@
  	<select id="findArticleMessageWithPage" parameterClass="map" resultMap="articleBasic">
  		
  		<![CDATA[
- 			select id,article_name,article_create_time,article_content,article_comment_id,article_field_id
+ 			select id,article_name,article_create_time,article_short_content,article_content,article_comment_id,article_field_id
 			from rebirth.article_message
 			where is_deleted = 0
 			order by update_time desc
@@ -41,7 +42,7 @@
  	<select id="findArticleMessageWithId" parameterClass="map" resultMap="articleBasic">
  		
  		<![CDATA[
- 			select id,article_name,article_create_time,article_content,article_comment_id,article_field_id
+ 			select id,article_name,article_create_time,article_short_content,article_content,article_comment_id,article_field_id
 			from rebirth.article_message
 			where is_deleted = 0
 			and id = #id#
@@ -50,10 +51,9 @@
  	</select>
  	
  	<insert id="insertNewArticle" parameterClass="map" >
- 		<![CDATA[
- 			
  			insert into rebirth.article_message
  			(article_name,
+ 			 article_short_content,
  			 article_content,
  			 article_field_id,
  			 article_create_time,
@@ -62,13 +62,13 @@
  			 version)
  			VALUES 
  			(#articleName#,
- 			#articleContent#,
- 			#articleSortId#,
- 			now(),
- 			now(),
- 			now(),
- 			0)
- 		]]>
+ 			 #articleShortContent#,
+ 			 #articleContent#,
+ 			 #articleSortId#,
+ 			 curdate(),
+ 			 now(),
+ 			 now(),
+ 			 0)
  	</insert>
 
     <insert id="insertMusics" parameterClass="map" >

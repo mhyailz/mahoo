@@ -26,16 +26,20 @@ public class BackendEditor {
 	}
     
     @RequestMapping(value="insert", method = RequestMethod.POST)
-	public void insertArticle(
+	public ModelAndView insertArticle(
 			@RequestParam(value = "articleName", required = false) String articleName,
+            @RequestParam(value = "articleShortContent", required = false) String articleShortContent,
 			@RequestParam(value = "articleContent", required = false) String articleContent,
 			@RequestParam(value = "articleSort", required = false) Integer articleSortId) {
     	
     	Map<String,Object> insertMap = new HashMap<String,Object>();
     	insertMap.put("articleName", articleName);
     	insertMap.put("articleContent", articleContent);
+        insertMap.put("articleShortContent", articleShortContent);
     	insertMap.put("articleSortId", articleSortId);
     	articleService.insertArticle(insertMap);
+        ModelAndView mv = new ModelAndView("backendArticle/backendEditorSuccess");
+        return mv;
 
 	}
     

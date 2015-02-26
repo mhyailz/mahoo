@@ -44,9 +44,15 @@
             </div>
           </div>
           <div class="form-group">
-            <label for="articleSort" class="col-sm-1 control-label">正文：</label>
+            <label for="articleShortContent" class="col-sm-1 control-label">简要：</label>
             <div class="col-sm-11">
-              <div id="summernote">summernote</div>
+              <div id="articleShortContent">summernote</div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="articleContent" class="col-sm-1 control-label">正文：</label>
+            <div class="col-sm-11">
+                <div id="articleContent">summernote</div>
             </div>
           </div>
           <div class="row">
@@ -67,20 +73,22 @@
 </body>
 <script>
     $(document).ready(function() {
-        $('#summernote').summernote({
+        $('#articleContent,#articleShortContent').summernote({
           height: 300
         });
     });
 
     $('#submit').click(function(){
-      var sHTML  = $('#summernote').code(),
+      var sHTML  = $('#articleContent').code(),
+          ssHTML = $('#articleShortContent').code(),
           aTitle = $('#articleName').val(),
           aSort  = $('#articleSort').val();
       $.ajax({
         url : '/backendEditor/insert',
-        method : 'post',
+        method : 'POST',
         data : {
           'articleName' : aTitle,
+          'articleShortContent' : ssHTML,
           'articleContent' : sHTML,
           'articleSort' : aSort
         },
