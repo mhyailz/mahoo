@@ -72,107 +72,22 @@
         </div>
       </div>
       <div class="col-md-7">
-        <div class="panel panel-default">
-          <div class="panel-heading">
-            <h4>1、快捷建站必备！25个高质量的网站模板PSD免费下载站模板PSD免费下载</h4>
-          </div>
-          <div class="panel-body">
-            快捷建站必备！25个高质量的网站模板PSD免费下载,快捷建站必备！25个高质量的网站模板PSD免费下载，
-            快捷建站必备！25个高质量的网站模板PSD免费下载,快捷建站必备！25个高质量的网站模板PSD免费下载，
-            快捷建站必备！25个高质量的网站模板PSD免费下载,快捷建站必备！25个高质量的网站模板PSD免费下载
-          </div>
-          <div class="panel-footer">
-            评论
-          </div>
-        </div>
-        <div class="panel panel-default">
-          <div class="panel-heading">
-            <h4>2、快捷建站必备！25个高质量的网站模板PSD免费下载</h4>
-          </div>
-          <div class="panel-body">
-            快捷建站必备！25个高质量的网站模板PSD免费下载,快捷建站必备！25个高质量的网站模板PSD免费下载
-          </div>
-          <div class="panel-footer">
-            评论
-          </div>
-        </div>
-        <div class="panel panel-default">
-          <div class="panel-heading">
-            <h4>3、快捷建站必备！25个高质量的网站模板PSD免费下载</h4>
-          </div>
-          <div class="panel-body">
-            快捷建站必备！25个高质量的网站模板PSD免费下载,快捷建站必备！25个高质量的网站模板PSD免费下载
-          </div>
-          <div class="panel-footer">
-            评论
-          </div>
-        </div>
-        <div class="panel panel-default">
-          <div class="panel-heading">
-            <h4>4、快捷建站必备！25个高质量的网站模板PSD免费下载</h4>
-          </div>
-          <div class="panel-body">
-            快捷建站必备！25个高质量的网站模板PSD免费下载,快捷建站必备！25个高质量的网站模板PSD免费下载
-          </div>
-          <div class="panel-footer">
-            评论
-          </div>
-        </div>
-        <div class="panel panel-default">
-          <div class="panel-heading">
-            <h4>5、快捷建站必备！25个高质量的网站模板PSD免费下载</h4>
-          </div>
-          <div class="panel-body">
-            快捷建站必备！25个高质量的网站模板PSD免费下载,快捷建站必备！25个高质量的网站模板PSD免费下载
-          </div>
-          <div class="panel-footer">
-            评论
-          </div>
-        </div>
-        <div class="panel panel-default">
-          <div class="panel-heading">
-            <h4>6、快捷建站必备！25个高质量的网站模板PSD免费下载</h4>
-          </div>
-          <div class="panel-body">
-            快捷建站必备！25个高质量的网站模板PSD免费下载,快捷建站必备！25个高质量的网站模板PSD免费下载
-          </div>
-          <div class="panel-footer">
-            评论
-          </div>
-        </div>
-        <div class="panel panel-default">
-          <div class="panel-heading">
-            <h4>7、快捷建站必备！25个高质量的网站模板PSD免费下载</h4>
-          </div>
-          <div class="panel-body">
-            快捷建站必备！25个高质量的网站模板PSD免费下载,快捷建站必备！25个高质量的网站模板PSD免费下载
-          </div>
-          <div class="panel-footer">
-            评论
-          </div>
-        </div>
-        <div class="panel panel-default">
-          <div class="panel-heading">
-            <h4>8、快捷建站必备！25个高质量的网站模板PSD免费下载</h4>
-          </div>
-          <div class="panel-body">
-            快捷建站必备！25个高质量的网站模板PSD免费下载,快捷建站必备！25个高质量的网站模板PSD免费下载
-          </div>
-          <div class="panel-footer">
-            评论
-          </div>
-        </div>
-        <div class="panel panel-default">
-          <div class="panel-heading">
-            <h4>9、快捷建站必备！25个高质量的网站模板PSD免费下载</h4>
-          </div>
-          <div class="panel-body">
-            快捷建站必备！25个高质量的网站模板PSD免费下载,快捷建站必备！25个高质量的网站模板PSD免费下载
-          </div>
-          <div class="panel-footer">
-            评论
-          </div>
-        </div>
+        <#if articles?exists && articles?size &gt;0>
+          <#list articles as articleList>
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h4>
+                  <a href="./item?ids=${articleList.ids?if_exists}">
+                  ${articleList_index + 1}、${articleList.articleName?if_exists}</a>
+                </h4>
+              </div>
+              <div class="panel-body">${articleList.articleShortContent?if_exists}</div>
+              <div class="panel-footer">
+                评论
+              </div>
+            </div>
+          </#list>
+        </#if>
       </div>
       <div class="col-md-3">
         <div class="panel panel-default">
