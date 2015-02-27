@@ -16,7 +16,7 @@
       <nav class="collapse navbar-collapse bs-navbar-collapse head-t" role="navigation">
         <ul class="nav navbar-nav">
           <li class="active bold">
-            <a href="#">Blog</a>
+            <a href="#">Home</a>
           </li>
           <li>
             <a href="#">About</a>
@@ -29,7 +29,7 @@
     <div class="content-bd row">
       <div class="col-md-2">
         <div class="list-group affix">
-          <a class="list-group-item active">
+          <a class="list-group-item">
             <i class="glyphicon glyphicon-chevron-right"></i>
               2015-10
           </a>
@@ -72,6 +72,10 @@
         </div>
       </div>
       <div class="col-md-7">
+        <ol class="breadcrumb">
+          <li class="active">Blog</li>
+          <li><a href="#">2015-10</a></li>
+        </ol>
         <#if articles?exists && articles?size &gt;0>
           <#list articles as articleList>
             <div class="panel panel-default">
@@ -83,30 +87,79 @@
               </div>
               <div class="panel-body">${articleList.articleShortContent?if_exists}</div>
               <div class="panel-footer">
-                评论
+                <p  class="other-massage">
+                  <span class="article-footer-ms">相关标签：</span>
+                  <span class="label label-success">javascript</span>
+                  <span class="label label-success">java</span>
+                  <span class="label label-success">胡说</span>
+                  <span class="glyphicon glyphicon-time" aria-hidden="true"></span>&nbsp;&nbsp;${articleList.articleCreateTime?if_exists}
+                  <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>&nbsp;&nbsp;0
+                </p>
               </div>
             </div>
           </#list>
         </#if>
+        <nav class="page-break">
+          <ul class="pagination">
+            <li class="disabled">
+              <a href="javascript:void(0)" aria-label="Previous">
+                <span aria-hidden="true">&laquo;</span>
+              </a>
+            </li>
+            <li class="active"><a href="javascript:void(0)">1</a></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li><a href="#">4</a></li>
+            <li><a href="#">5</a></li>
+            <li>
+              <a href="#" aria-label="Next">
+                <span aria-hidden="true">&raquo;</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
       </div>
       <div class="col-md-3">
+        <div class="input-group article-search">
+          <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" placeholder="search mahoo">
+          <span class="input-group-addon"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></span>
+        </div>
         <div class="panel panel-default">
           <div class="panel-heading">
-            <h3 class="panel-title">标签</h3>
+            所有标签&nbsp;&nbsp;<span class="glyphicon glyphicon-list" aria-hidden="true"></span>
           </div>
           <div class="panel-body">
-            <span class="label label-success">javascript</span>
-            <span class="label label-success">java</span>
-            <span class="label label-success">胡说</span>
-            <span class="label label-success">杂谈</span>
-            <span class="label label-success">javascript</span>
-            <span class="label label-success">java</span>
-            <span class="label label-success">胡说</span>
-            <span class="label label-success">杂谈</span>
+            <a class="label-diy" href="">JavaScript</a>
+            <a class="label-diy" href="">Java</a>
+            <a class="label-diy" href="">胡说</a>
+            <a class="label-diy" href="">CSS</a>
+            <a class="label-diy" href="">HTML</a>
+            <a class="label-diy" href="">杂谈</a>
+            <a class="label-diy" href="">JavaScript</a>
+            <a class="label-diy" href="">Java</a>
+            <a class="label-diy" href="">胡说</a>
+            <a class="label-diy" href="">CSS</a>
+            <a class="label-diy" href="">HTML</a>
+            <a class="label-diy" href="">杂谈</a>
+            <a class="label-diy" href="">JavaScript</a>
+            <a class="label-diy" href="">Java</a>
+            <a class="label-diy" href="">胡说</a>
+            <a class="label-diy" href="">CSS</a>
+            <a class="label-diy" href="">HTML</a>
+            <a class="label-diy" href="">杂谈</a>
+            <a class="label-diy" href="">JavaScript</a>
+            <a class="label-diy" href="">Java</a>
+            <a class="label-diy" href="">胡说</a>
+            <a class="label-diy" href="">CSS</a>
+            <a class="label-diy" href="">HTML</a>
+            <a class="label-diy" href="">杂谈</a>
           </div>
         </div>
       </div>
     </div>
+  </div>
+  <div class="page-footer">
+    <p>© 2015 mahoo, aHa</p>
   </div>
 </body>
 </html>
