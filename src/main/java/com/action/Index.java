@@ -1,6 +1,8 @@
 package com.action;
 
 import com.model.Article;
+import com.model.ArticleLabel;
+import com.service.ArticleLabelService;
 import com.service.ArticleService;
 import com.utils.AESEncryptor;
 import org.apache.commons.lang.StringUtils;
@@ -25,6 +27,11 @@ public class Index  implements Serializable {
     @Autowired
     private ArticleService articleService;
 
+    @Autowired
+    private ArticleLabelService articleLabelService;
+
+
+
     /** 文章列表 **/
     @RequestMapping(value="index", method = RequestMethod.GET)
     public ModelAndView initPage() {
@@ -40,10 +47,16 @@ public class Index  implements Serializable {
             }
         }
 
+        List<ArticleLabel> articleLabels = articleLabelService.getAllLabels();
+
         /** 放到map 展示 **/
         mv.addObject("articles", articles);
+        mv.addObject("articleLabels", articleLabels);
         return mv;
     }
+
+
+
 
     /** 详情页面 **/
     @RequestMapping(value="item", method = RequestMethod.GET)
@@ -74,16 +87,6 @@ public class Index  implements Serializable {
 
         mv.addObject("articles", articles);
         return mv;
-    }
-
-    /**************************get set ************************/
-
-    public ArticleService getArticleService() {
-        return articleService;
-    }
-
-    public void setArticleService(ArticleService articleService) {
-        this.articleService = articleService;
     }
 
 }  

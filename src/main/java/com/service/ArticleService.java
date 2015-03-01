@@ -29,24 +29,4 @@ public interface ArticleService {
 	 */
 	public void insertArticle(Map<String, Object> insertMap);
 
-    /**
-     *
-     * @param name
-     * @param musicType
-     */
-    public void insertMusic(String name, int musicType);
-
-    /**
-     *
-     * @param musicType
-     * @return
-     */
-    public int getMusicTotalCount(int musicType);
-
-    /**
-     *
-     * @param number
-     * @return
-     */
-    public String getMusicNameByNumber(int number,int musicType);
 }

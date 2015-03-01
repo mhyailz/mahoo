@@ -28,4 +28,12 @@ public class ArticleLabel implements Serializable {
     public void setId(int id) {
         this.id = id;
     }
+
+    public String getLabelName() {
+        return labelName;
+    }
+
+    public void setLabelName(String labelName) {
+        this.labelName = labelName;
+    }
 }

@@ -129,30 +129,11 @@
             所有标签&nbsp;&nbsp;<span class="glyphicon glyphicon-list" aria-hidden="true"></span>
           </div>
           <div class="panel-body">
-            <a class="label-diy" href="">JavaScript</a>
-            <a class="label-diy" href="">Java</a>
-            <a class="label-diy" href="">胡说</a>
-            <a class="label-diy" href="">CSS</a>
-            <a class="label-diy" href="">HTML</a>
-            <a class="label-diy" href="">杂谈</a>
-            <a class="label-diy" href="">JavaScript</a>
-            <a class="label-diy" href="">Java</a>
-            <a class="label-diy" href="">胡说</a>
-            <a class="label-diy" href="">CSS</a>
-            <a class="label-diy" href="">HTML</a>
-            <a class="label-diy" href="">杂谈</a>
-            <a class="label-diy" href="">JavaScript</a>
-            <a class="label-diy" href="">Java</a>
-            <a class="label-diy" href="">胡说</a>
-            <a class="label-diy" href="">CSS</a>
-            <a class="label-diy" href="">HTML</a>
-            <a class="label-diy" href="">杂谈</a>
-            <a class="label-diy" href="">JavaScript</a>
-            <a class="label-diy" href="">Java</a>
-            <a class="label-diy" href="">胡说</a>
-            <a class="label-diy" href="">CSS</a>
-            <a class="label-diy" href="">HTML</a>
-            <a class="label-diy" href="">杂谈</a>
+            <#if articleLabels?exists && articleLabels?size &gt;0>
+                <#list articleLabels as articleLabelList>
+                    <a class="label-diy" href="" data-id="${articleLabelList.id?if_exists}">${articleLabelList.labelName?if_exists}</a>
+                </#list>
+            </#if>
           </div>
         </div>
       </div>

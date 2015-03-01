@@ -42,8 +42,5 @@ public class BackendEditor {
         return mv;
 
 	}
-    
-    /**************************get set ************************/
 
-	
-}  
+}
