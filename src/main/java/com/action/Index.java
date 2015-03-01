@@ -12,10 +12,11 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.io.Serializable;
 import java.util.List;
 @Controller
 @RequestMapping("/")
-public class Index {
+public class Index  implements Serializable {
 
     /** 密钥  **/
     private static final String SECRETKEY = "abcdefghijklmnop" ;
