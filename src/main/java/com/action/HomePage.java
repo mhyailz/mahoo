@@ -18,7 +18,7 @@ import java.io.Serializable;
 import java.util.List;
 @Controller
 @RequestMapping("/")
-public class Index  implements Serializable {
+public class HomePage implements Serializable {
 
     /** 密钥  **/
     private static final String SECRETKEY = "abcdefghijklmnop" ;
@@ -29,7 +29,6 @@ public class Index  implements Serializable {
 
     @Autowired
     private ArticleLabelService articleLabelService;
-
 
 
     /** 文章列表 **/
@@ -47,15 +46,18 @@ public class Index  implements Serializable {
             }
         }
 
+        /** 标签List **/
         List<ArticleLabel> articleLabels = articleLabelService.getAllLabels();
+
+        /** 时间List **/
+        List<String> monthList = articleService.getArticleMonthList();
 
         /** 放到map 展示 **/
         mv.addObject("articles", articles);
         mv.addObject("articleLabels", articleLabels);
+        mv.addObject("months", monthList);
         return mv;
     }
-
-
 
 
     /** 详情页面 **/

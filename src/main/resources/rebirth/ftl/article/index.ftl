@@ -29,46 +29,14 @@
     <div class="content-bd row">
       <div class="col-md-2">
         <div class="list-group affix">
-          <a class="list-group-item">
-            <i class="glyphicon glyphicon-chevron-right"></i>
-              2015-10
-          </a>
-          <a class="list-group-item">
-            <i class="glyphicon glyphicon-chevron-right"></i>
-              2015-10
-          </a>
-          <a class="list-group-item">
-            <i class="glyphicon glyphicon-chevron-right"></i>
-              2015-10
-          </a>
-          <a class="list-group-item">
-            <i class="glyphicon glyphicon-chevron-right"></i>
-              2015-10
-          </a>
-          <a class="list-group-item">
-            <i class="glyphicon glyphicon-chevron-right"></i>
-            2015-10
-          </a>
-          <a class="list-group-item">
-            <i class="glyphicon glyphicon-chevron-right"></i>
-            2015-10
-          </a>
-          <a class="list-group-item">
-            <i class="glyphicon glyphicon-chevron-right"></i>
-            2015-10
-          </a>
-          <a class="list-group-item">
-            <i class="glyphicon glyphicon-chevron-right"></i>
-            2015-10
-          </a>
-          <a class="list-group-item">
-            <i class="glyphicon glyphicon-chevron-right"></i>
-            2015-10
-          </a>
-          <a class="list-group-item">
-            <i class="glyphicon glyphicon-chevron-right"></i>
-            2015-10
-          </a>
+        <#if months?exists && months?size &gt;0>
+            <#list months as articleList>
+                <a class="list-group-item">
+                    <i class="glyphicon glyphicon-chevron-right"></i>
+                    ${articleList}
+                </a>
+            </#list>
+        </#if>
         </div>
       </div>
       <div class="col-md-7">

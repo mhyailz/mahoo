@@ -34,4 +34,9 @@ public interface ArticleDao {
 	 */
 	public void insertArticle(Map<String, Object> insertMap);
 
+    /**
+     *
+     * @return
+     */
+    public List<String> getArticleMonthList();
 }

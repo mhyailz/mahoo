@@ -35,4 +35,9 @@ public class ArticleDaoImpl implements ArticleDao {
 		sqlMapClientTemplate.insert("insertNewArticle",insertMap);
 	}
 
+    @Override
+    public List<String> getArticleMonthList() {
+        return sqlMapClientTemplate.queryForList("getArticleMonthList");
+    }
+
 }

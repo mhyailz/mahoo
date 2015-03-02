@@ -51,59 +51,29 @@
  	</select>
  	
  	<insert id="insertNewArticle" parameterClass="map" >
- 			insert into rebirth.article_message
- 			(article_name,
- 			 article_short_content,
- 			 article_content,
- 			 article_field_id,
- 			 article_create_time,
- 			 create_time,
- 			 update_time,
- 			 version)
- 			VALUES 
- 			(#articleName#,
- 			 #articleShortContent#,
- 			 #articleContent#,
- 			 #articleSortId#,
- 			 curdate(),
- 			 now(),
- 			 now(),
- 			 0)
+        insert into rebirth.article_message
+        (article_name,
+         article_short_content,
+         article_content,
+         article_field_id,
+         article_create_time,
+         create_time,
+         update_time,
+         version)
+        VALUES
+        (#articleName#,
+         #articleShortContent#,
+         #articleContent#,
+         #articleSortId#,
+         curdate(),
+         now(),
+         now(),
+         0)
  	</insert>
 
-    <insert id="insertMusics" parameterClass="map" >
-        <![CDATA[
- 			insert into rebirth.music_message
- 			(name,
- 			 music_type,
- 			 create_time,
- 			 update_time,
- 			 version)
- 			VALUES
- 			(#name#,
- 			#musicType#,
- 			now(),
- 			now(),
- 			0)
- 		]]>
-    </insert>
-
-    <select id="getMusicTotalCount" parameterClass="map" resultClass="int">
-        <![CDATA[
-          select count(1)
-          from rebirth.music_message
-          where music_type = #musicType#
-        ]]>
-    </select>
-
-    <select id="getMusicNameByNumber" parameterClass="map" resultClass="String">
-        select name
-        from rebirth.music_message
-        where music_type = #musicType#
-        order by id
-        limit #number#,1
-
-    </select>
+   <select id="getArticleMonthList" resultClass="String">
+       select distinct(date_format(article_create_time,'%Y-%m')) from rebirth.article_message
+   </select>
 
  </sqlMap>
 

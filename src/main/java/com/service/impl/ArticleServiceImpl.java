@@ -32,4 +32,9 @@ public class ArticleServiceImpl implements ArticleService {
 		
 	}
 
+    @Override
+    public List<String> getArticleMonthList() {
+        return articleDao.getArticleMonthList();
+    }
+
 }

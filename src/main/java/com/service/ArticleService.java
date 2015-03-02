@@ -29,4 +29,16 @@ public interface ArticleService {
 	 */
 	public void insertArticle(Map<String, Object> insertMap);
 
+    /**
+     *
+     * @return
+     */
+    public List<String> getArticleMonthList();
+
+    /**
+     *
+     * @param map
+     * @return
+     */
+    public  List<Article> findArticleWithPara(Map<String, Object> map);
 }
