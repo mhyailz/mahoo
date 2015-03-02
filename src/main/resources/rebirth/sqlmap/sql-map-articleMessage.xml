@@ -71,18 +71,18 @@
             article_field_id
         from rebirth.article_message
         where is_deleted = 0
-        <isNotEmpty prepend="AND" property="monthType">
+        <isNotEmpty prepend="and" property="monthType">
             date_format(article_create_time,'%Y-%m') = #monthType#
         </isNotEmpty>
-        <isNotEmpty prepend="AND" property="keyWordsType">
+        <isNotEmpty prepend="and" property="keyWordsType">
             article_name like '%'||#keyWordsType#||'%'
             or article_content like '%'||#keyWordsType#||'%'
         </isNotEmpty>
-        <isNotEmpty prepend="AND" property="articleLabel">
+        <isNotEmpty prepend="and" property="articleLabel">
             article_field_id =  #articleLabel#
         </isNotEmpty>
         order by update_time desc
-        limit #start#,#end#
+        limit #pageNo#,#PageSize#
 
     </select>
 
