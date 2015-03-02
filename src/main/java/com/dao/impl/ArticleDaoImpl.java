@@ -40,4 +40,10 @@ public class ArticleDaoImpl implements ArticleDao {
         return sqlMapClientTemplate.queryForList("getArticleMonthList");
     }
 
+
+    @Override
+    public List<Article> findArticleWithPara(Map<String, Object> map) {
+        return sqlMapClientTemplate.queryForList("findArticleWithPara", map);
+    }
+
 }

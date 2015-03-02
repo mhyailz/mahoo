@@ -16,17 +16,6 @@
 		<result property="articleSortId" column="article_field_id"/>
     </resultMap>
  	
- 	<select id="findArticleMessageByArticleName" parameterClass="String" resultMap="articleBasic">
- 		
- 		<![CDATA[
- 			select article_name,article_create_time,article_short_content,article_content,article_comment_id,article_sort_id
-			from rebirth.article_message
-			where article_name like '%'||#name#||'%'
-			or article_content like '%'||#name#||'%'
- 		]]>
- 		
- 	</select>
- 	
  	<select id="findArticleMessageWithPage" parameterClass="map" resultMap="articleBasic">
  		
  		<![CDATA[
@@ -38,16 +27,12 @@
  		]]>
  		
  	</select>
- 	
- 	<select id="findArticleMessageWithId" parameterClass="map" resultMap="articleBasic">
- 		
- 		<![CDATA[
+
+    <select id="findArticleMessageWithId" parameterClass="map" resultMap="articleBasic">
  			select id,article_name,article_create_time,article_short_content,article_content,article_comment_id,article_field_id
 			from rebirth.article_message
 			where is_deleted = 0
 			and id = #id#
- 		]]>
- 		
  	</select>
  	
  	<insert id="insertNewArticle" parameterClass="map" >
@@ -74,6 +59,33 @@
    <select id="getArticleMonthList" resultClass="String">
        select distinct(date_format(article_create_time,'%Y-%m')) from rebirth.article_message
    </select>
+
+
+    <select id="findArticleWithPara" parameterClass="map" resultMap="articleBasic">
+        select id,
+            article_name,
+            article_create_time,
+            article_short_content,
+            article_content,
+            article_comment_id,
+            article_field_id
+        from rebirth.article_message
+        where is_deleted = 0
+        <isNotEmpty prepend="AND" property="monthType">
+            date_format(article_create_time,'%Y-%m') = #monthType#
+        </isNotEmpty>
+        <isNotEmpty prepend="AND" property="keyWordsType">
+            article_name like '%'||#keyWordsType#||'%'
+            or article_content like '%'||#keyWordsType#||'%'
+        </isNotEmpty>
+        <isNotEmpty prepend="AND" property="articleLabel">
+            article_field_id =  #articleLabel#
+        </isNotEmpty>
+        order by update_time desc
+        limit #start#,#end#
+
+    </select>
+
 
  </sqlMap>
 

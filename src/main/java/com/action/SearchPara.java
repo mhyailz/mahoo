@@ -35,15 +35,17 @@ public class SearchPara {
                                        @RequestParam(value = "v", required = true)  String v,
                                        @RequestParam(value = "n", required = true)  Integer n){
 
-        Map<String,Object> map = new HashMap<String, Object>();
 
+        n = n > 0 ? n : 1;
+
+        Map<String,Object> map = new HashMap<String, Object>();
         for(SearchType searchType : SearchType.values()){
              if(st == searchType.getTypeId()){
                  map.put(searchType.getTypeValue(),v);
              }
         }
 
-        map.put("pageNo",n);
+        map.put("pageNo",(n - 1) * pageSize);
         map.put("PageSize",pageSize);
 
         List<Article> articles = articleService.findArticleWithPara(map);

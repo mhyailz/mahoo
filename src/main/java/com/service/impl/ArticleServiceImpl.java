@@ -37,4 +37,9 @@ public class ArticleServiceImpl implements ArticleService {
         return articleDao.getArticleMonthList();
     }
 
+    @Override
+    public List<Article> findArticleWithPara(Map<String, Object> map) {
+        return articleDao.findArticleWithPara(map);
+    }
+
 }

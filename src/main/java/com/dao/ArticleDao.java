@@ -39,4 +39,12 @@ public interface ArticleDao {
      * @return
      */
     public List<String> getArticleMonthList();
+
+    /**
+     *
+     * @param map
+     * @return
+     */
+    public List<Article> findArticleWithPara(Map<String, Object> map);
+
 }
