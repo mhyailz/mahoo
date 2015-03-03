@@ -3,7 +3,7 @@ package com.dict;
 /**
  * Created by Administrator on 2015/3/2.
  */
-public enum SearchType {
+public enum SearchTypeEnum {
 
     monthPara(0,"monthType"),  // 通过月份查询
 
@@ -24,7 +24,7 @@ public enum SearchType {
 
 
 
-    SearchType(int typeId,String typeValue) {
+    SearchTypeEnum(int typeId, String typeValue) {
         this.typeId    = typeId;
         this.typeValue = typeValue;
     }

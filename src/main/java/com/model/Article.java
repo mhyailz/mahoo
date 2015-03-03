@@ -23,7 +23,10 @@ public class Article {
 	
 	/**文章分类id **/
 	private Integer articleSortId;
-	
+
+    /** 分类名称 **/
+    private String  articleSortName;
+
 	/**加密id **/
 	private String ids;
 
@@ -92,5 +95,11 @@ public class Article {
         this.articleShortContent = articleShortContent;
     }
 
+    public String getArticleSortName() {
+        return articleSortName;
+    }
 
+    public void setArticleSortName(String articleSortName) {
+        this.articleSortName = articleSortName;
+    }
 }

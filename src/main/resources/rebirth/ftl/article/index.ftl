@@ -16,10 +16,10 @@
       <nav class="collapse navbar-collapse bs-navbar-collapse head-t" role="navigation">
         <ul class="nav navbar-nav">
           <li class="active bold">
-            <a href="#">Home</a>
+            <a href="/index">Home</a>
           </li>
           <li>
-            <a href="#">About</a>
+            <a href="/about">About</a>
           </li>
         </ul>
       </nav>
@@ -30,20 +30,22 @@
       <div class="col-md-2">
         <div class="list-group affix">
         <#if months?exists && months?size &gt;0>
-            <#list months as articleList>
-                <a class="list-group-item">
+            <#list months as monthList>
+                <a class="list-group-item <#if monthList?exists && so?exists && monthList == so>active</#if> " href="/s?st=0&v=${monthList?if_exists}&n=1">
                     <i class="glyphicon glyphicon-chevron-right"></i>
-                    ${articleList}
+                    ${monthList?if_exists}
                 </a>
             </#list>
         </#if>
         </div>
       </div>
       <div class="col-md-7">
-        <ol class="breadcrumb">
-          <li class="active">Blog</li>
-          <li><a href="#">2015-10</a></li>
-        </ol>
+        <#if so?exists>
+            <ol class="breadcrumb">
+                <li class="active"><a href="/index">Blog</a></li>
+                <li>${so?if_exists}</li>
+            </ol>
+        </#if>
         <#if articles?exists && articles?size &gt;0>
           <#list articles as articleList>
             <div class="panel panel-default">
@@ -56,18 +58,21 @@
               <div class="panel-body">${articleList.articleShortContent?if_exists}</div>
               <div class="panel-footer">
                 <p  class="other-massage">
-                  <span class="article-footer-ms">相关标签：</span>
-                  <span class="label label-success">javascript</span>
-                  <span class="label label-success">java</span>
-                  <span class="label label-success">胡说</span>
+                  <span class="article-footer-ms">分类：</span>
+                  <span class="label label-success"><a href="/s?st=2&v=${articleList.articleSortId}&n=1&so=${articleList.articleSortName?if_exists}">${articleList.articleSortName?if_exists}</a></span>
+                  <#-- <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>&nbsp;&nbsp;0 -->
                   <span class="glyphicon glyphicon-time" aria-hidden="true"></span>&nbsp;&nbsp;${articleList.articleCreateTime?if_exists}
-                  <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>&nbsp;&nbsp;0
                 </p>
               </div>
             </div>
           </#list>
+        <#else>
+           <div class="well not-found">
+               <img src="/img/404.gif" alt="没有页面信息" />
+           </div>
         </#if>
         <nav class="page-break">
+          <#--
           <ul class="pagination">
             <li class="disabled">
               <a href="javascript:void(0)" aria-label="Previous">
@@ -85,6 +90,7 @@
               </a>
             </li>
           </ul>
+          -->
         </nav>
       </div>
       <div class="col-md-3">
@@ -99,7 +105,7 @@
           <div class="panel-body">
             <#if articleLabels?exists && articleLabels?size &gt;0>
                 <#list articleLabels as articleLabelList>
-                    <a class="label-diy" href="" data-id="${articleLabelList.id?if_exists}">${articleLabelList.labelName?if_exists}</a>
+                    <a class="label-diy" href="/s?st=2&v=${articleLabelList.id}&n=1&so=${articleLabelList.labelName?if_exists}">${articleLabelList.labelName?if_exists}</a>
                 </#list>
             </#if>
           </div>

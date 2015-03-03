@@ -12,14 +12,6 @@ import com.model.Article;
  */
 
 public interface ArticleDao {
-	
-	/**
-	 * 
-	 * @param pageNo
-	 * @param pageSize
-	 * @return
-	 */
-	public List<Article> getAllArticleList(Integer pageNo, Integer pageSize);
 
 	/**
 	 * 

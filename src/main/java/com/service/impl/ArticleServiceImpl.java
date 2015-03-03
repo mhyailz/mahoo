@@ -14,12 +14,7 @@ public class ArticleServiceImpl implements ArticleService {
 
     @Autowired
 	private ArticleDao articleDao;
-	
-	@Override
-	public List<Article> getAllArticleList(int pageNo, int pageSize) {
-		return articleDao.getAllArticleList(pageNo, pageSize);
-	}
-	
+
 	@Override
 	public List<Article> getArticleById(Integer id) {
 		return articleDao.getArticleById(id);

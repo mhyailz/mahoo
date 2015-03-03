@@ -78,3 +78,13 @@
 .page-footer p{
     padding:30px;
 }
+.label-success a{
+    color: white;
+}
+.label-success a:hover{
+    text-decoration: none;
+}
+.not-found{
+    min-height: 500px;
+    text-align: center;
+}

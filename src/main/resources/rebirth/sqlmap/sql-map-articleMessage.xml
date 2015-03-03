@@ -14,25 +14,23 @@
 		<result property="articleShortContent" column="article_short_content"/>
 		<result property="articleCommentId" column="article_comment_id"/>
 		<result property="articleSortId" column="article_field_id"/>
+        <result property="articleSortName" column="label_name"/>
     </resultMap>
- 	
- 	<select id="findArticleMessageWithPage" parameterClass="map" resultMap="articleBasic">
- 		
- 		<![CDATA[
- 			select id,article_name,article_create_time,article_short_content,article_content,article_comment_id,article_field_id
-			from rebirth.article_message
-			where is_deleted = 0
-			order by update_time desc
-			limit #start#,#end#
- 		]]>
- 		
- 	</select>
 
     <select id="findArticleMessageWithId" parameterClass="map" resultMap="articleBasic">
- 			select id,article_name,article_create_time,article_short_content,article_content,article_comment_id,article_field_id
-			from rebirth.article_message
-			where is_deleted = 0
-			and id = #id#
+ 			select am.id,
+ 			       am.article_name,
+ 			       am.article_create_time,
+ 			       am.article_short_content,
+ 			       am.article_content,
+ 			       am.article_comment_id,
+ 			       am.article_field_id,
+ 			       al.name as label_name
+			from rebirth.article_message am
+			left join  rebirth.article_label al
+			on am.article_field_id = al.id
+			where am.is_deleted = 0
+			and am.id = #id#
  	</select>
  	
  	<insert id="insertNewArticle" parameterClass="map" >
@@ -57,31 +55,35 @@
  	</insert>
 
    <select id="getArticleMonthList" resultClass="String">
-       select distinct(date_format(article_create_time,'%Y-%m')) from rebirth.article_message
+       select distinct(date_format(article_create_time,'%Y-%m'))
+       from rebirth.article_message
    </select>
 
 
     <select id="findArticleWithPara" parameterClass="map" resultMap="articleBasic">
-        select id,
-            article_name,
-            article_create_time,
-            article_short_content,
-            article_content,
-            article_comment_id,
-            article_field_id
-        from rebirth.article_message
-        where is_deleted = 0
+        select am.id,
+            am.article_name,
+            date_format(am.article_create_time,'%Y-%M-%d') as article_create_time,
+            am.article_short_content,
+            am.article_content,
+            am.article_comment_id,
+            am.article_field_id,
+            al.name as label_name
+        from rebirth.article_message am
+        LEFT JOIN rebirth.article_label al
+        on am.article_field_id = al.id
+        where am.is_deleted = 0
         <isNotEmpty prepend="and" property="monthType">
-            date_format(article_create_time,'%Y-%m') = #monthType#
+            date_format(am.article_create_time,'%Y-%m') = #monthType#
         </isNotEmpty>
         <isNotEmpty prepend="and" property="keyWordsType">
-            article_name like '%'||#keyWordsType#||'%'
-            or article_content like '%'||#keyWordsType#||'%'
+            am.article_name like '%'||#keyWordsType#||'%'
+            or am.article_content like '%'||#keyWordsType#||'%'
         </isNotEmpty>
         <isNotEmpty prepend="and" property="articleLabel">
-            article_field_id =  #articleLabel#
+            am.article_field_id =  #articleLabel#
         </isNotEmpty>
-        order by update_time desc
+        order by am.update_time desc
         limit #pageNo#,#PageSize#
 
     </select>

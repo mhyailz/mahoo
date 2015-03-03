@@ -15,13 +15,6 @@ public class ArticleDaoImpl implements ArticleDao {
     @Autowired
 	private SqlMapClientTemplate  sqlMapClientTemplate;
 
-	@Override
-	public List<Article> getAllArticleList(Integer pageNo, Integer pageSize) {
-		Map<String, Object> map = new HashMap<String,Object>();
-		map.put("start", (pageNo-1) * pageSize);
-		map.put("end", pageSize);
-		return sqlMapClientTemplate.queryForList("findArticleMessageWithPage", map);
-	}
 
 	@Override
 	public List<Article> getArticleById(Integer id) {
