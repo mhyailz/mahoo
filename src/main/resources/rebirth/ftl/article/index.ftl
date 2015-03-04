@@ -110,11 +110,16 @@
             </#if>
           </div>
         </div>
+        <span id="to_the_top" class="glyphicon glyphicon-chevron-up"></span>
       </div>
     </div>
   </div>
   <div class="page-footer">
-    <p>© 2015 mahoo, aHa</p>
+    <p>&copy; 2015 mahoo, aHa</p>
   </div>
+  <script src="/js/jquery.scrollToTop.min.js"></script>
+  <script>$("#to_the_top").scroll2Top({
+    fadeSpeed : 200
+  });</script>
 </body>
 </html>
