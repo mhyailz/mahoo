@@ -94,10 +94,12 @@
         </nav>
       </div>
       <div class="col-md-3">
+        <#--
         <div class="input-group article-search">
           <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" placeholder="search mahoo">
           <span class="input-group-addon"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></span>
         </div>
+        -->
         <div class="panel panel-default">
           <div class="panel-heading">
             所有标签&nbsp;&nbsp;<span class="glyphicon glyphicon-list" aria-hidden="true"></span>

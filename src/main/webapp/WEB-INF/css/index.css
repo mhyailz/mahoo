@@ -95,3 +95,12 @@
     bottom: 140px;
     cursor: pointer;
 }
+.CODE_snippets{
+    max-width: 75%;
+}
+.CODE_snippets h5 a.to_CODE{
+    display: none !important;
+}
+.pull-right{
+    display: none;
+}
