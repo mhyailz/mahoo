@@ -42,14 +42,13 @@
     </div>
     -->
     <div class="col-md-9">
-    <#if so?exists>
-      <ol class="breadcrumb">
-        <li class="active"><a href="/index">Blog</a></li>
-        <li>${so?if_exists}</li>
-      </ol>
-    </#if>
     <#if articles?exists && articles?size &gt;0>
-      <#list articles as articleList>
+        <#list articles as articleList>
+        <ol class="breadcrumb">
+          <li class="active"><a href="/index">Blog</a></li>
+          <li><a href="/s?st=2&v=${articleList.articleSortId}&n=1&so=${articleList.articleSortName?if_exists}">${articleList.articleSortName?if_exists}</a></li>
+          <li>${articleList.articleName?if_exists}</li>
+        </ol>
         <div class="panel panel-default">
           <div class="panel-heading">
             <h4>
@@ -126,6 +125,25 @@
           </a>
         </#list>
       </#if>
+      </div>
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          联系
+        </div>
+        <ul class="list-group">
+          <li class="list-group-item">
+            <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>&nbsp;&nbsp;
+            <a href="mailto:mhyailz@gmail.com">mhyailz@gmail.com</a>
+          </li>
+          <li class="list-group-item">
+            <span class="glyphicon glyphicon-comment" aria-hidden="true"></span>&nbsp;&nbsp;
+            <a href="http://weibo.com/xmahu">weibo.com/xmahu</a>
+          </li>
+          <li class="list-group-item">
+            <span class="glyphicon glyphicon-qrcode" aria-hidden="true"></span>&nbsp;&nbsp;
+            <img src="http://mahoo.oss-cn-qingdao.aliyuncs.com/image/%E4%BA%8C%E7%BB%B4%E7%A0%81.jpg" alt="二维码" >
+          </li>
+        </ul>
       </div>
     </div>
   </div>

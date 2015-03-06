@@ -112,6 +112,26 @@
             </#if>
           </div>
         </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+              联系
+            </div>
+            <ul class="list-group">
+              <li class="list-group-item">
+                 <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>&nbsp;&nbsp;
+                 <a href="mailto:mhyailz@gmail.com">mhyailz@gmail.com</a>
+              </li>
+              <li class="list-group-item">
+                <span class="glyphicon glyphicon-comment" aria-hidden="true"></span>&nbsp;&nbsp;
+                <a href="http://weibo.com/xmahu">weibo.com/xmahu</a>
+              </li>
+              <li class="list-group-item">
+                <span class="glyphicon glyphicon-qrcode" aria-hidden="true"></span>&nbsp;&nbsp;
+                <img src="http://mahoo.oss-cn-qingdao.aliyuncs.com/image/%E4%BA%8C%E7%BB%B4%E7%A0%81.jpg" alt="二维码" >
+              </li>
+
+            </ul>
+        </div>
         <span id="to_the_top" class="glyphicon glyphicon-chevron-up"></span>
       </div>
     </div>
