@@ -35,11 +35,10 @@
             <label for="articleSort" class="col-sm-1 control-label">分类：</label>
             <div class="col-sm-2">
               <select class="form-control" id="articleSort">
-                <option value="1">杂谈</option>
-                <option value="2">JAVA</option>
-                <option value="3">JS</option>
-                <option value="4">CSS</option>
-                <option value="5">Spring</option>
+                <option value="1">Java</option>
+                <option value="2">css</option>
+                <option value="3">生活随笔</option>
+                <option value="4">Spring</option>
               </select>
             </div>
           </div>

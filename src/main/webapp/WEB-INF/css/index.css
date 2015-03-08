@@ -4,6 +4,10 @@
  ** version : 1.0
  **
  **/
+::selection{
+    background: #eb7350;
+    color: white;
+}
 .navbar{
     border-radius: 0;
 }
@@ -44,9 +48,6 @@
 .panel-heading h4 a:hover{
     text-shadow: 0 0 1px #999;
     cursor: pointer;
-}
-.panel-body{
-    color:#888;
 }
 .label-diy{
     padding:2px;
@@ -96,10 +97,18 @@
     cursor: pointer;
 }
 .CODE_snippets{
-    max-width: 75%;
+    margin-left:  auto !important;
+    margin-right: auto !important;
+    max-width: 80%;
+}
+.CODE_snippets h5{
+    padding: 0 !important;
 }
 .CODE_snippets h5 a.to_CODE{
     display: none !important;
+}
+.CODE_snippets .file_holder .file_content.code table.lines pre{
+    font-size: 13px !important;
 }
 .pull-right{
     display: none;
