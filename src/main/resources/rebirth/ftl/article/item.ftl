@@ -141,7 +141,7 @@
           </li>
           <li class="list-group-item">
             <span class="glyphicon glyphicon-qrcode" aria-hidden="true"></span>&nbsp;&nbsp;
-            <img src="http://mahoo.oss-cn-qingdao.aliyuncs.com/image/%E4%BA%8C%E7%BB%B4%E7%A0%81.jpg" alt="二维码" >
+            <a href="javascript:void(0)" data-html="true" data-toggle="popover" data-trigger="hover" title="微信扫一扫" data-content="<img src='http://mahoo.oss-cn-qingdao.aliyuncs.com/image/%E4%BA%8C%E7%BB%B4%E7%A0%81.gif' alt='二维码' >" data-placement="right">约吗！</a>
           </li>
         </ul>
       </div>
@@ -151,5 +151,10 @@
 <div class="page-footer">
   <p>&copy; 2015 mahoo, aHa</p>
 </div>
+<script>
+  $(function () {
+    $('[data-toggle="popover"]').popover()
+  })
+</script>
 </body>
 </html>
