@@ -145,7 +145,7 @@
       fadeSpeed : 200
     });
     $(function () {
-      $('[data-toggle="popover"]').popover()
+      $('[data-toggle="popover"]').popover();
     })
   </script>
 </body>
