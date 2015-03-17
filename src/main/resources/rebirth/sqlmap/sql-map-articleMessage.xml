@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE sqlMap        
-    PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"        
-    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
- <sqlMap>
- 	
- 	<typeAlias alias="articleBasic" type="com.model.Article" />
-	
-	<resultMap id="articleBasic" class="articleBasic">
-		<result property="id" column="id"/>
-    	<result property="articleName" column="article_name"/>
-		<result property="articleCreateTime" column="article_create_time"/>
+<!DOCTYPE sqlMap
+        PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
+        "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap>
+
+    <typeAlias alias="articleBasic" type="com.model.Article" />
+
+    <resultMap id="articleBasic" class="articleBasic">
+        <result property="id" column="id"/>
+        <result property="articleName" column="article_name"/>
+        <result property="articleCreateTime" column="article_create_time"/>
         <result property="articleContent" column="article_content"/>
-		<result property="articleShortContent" column="article_short_content"/>
-		<result property="articleCommentId" column="article_comment_id"/>
-		<result property="articleSortId" column="article_field_id"/>
+        <result property="articleShortContent" column="article_short_content"/>
+        <result property="articleCommentId" column="article_comment_id"/>
+        <result property="articleSortId" column="article_field_id"/>
         <result property="articleSortName" column="label_name"/>
     </resultMap>
 
@@ -31,45 +31,46 @@
 			on am.article_field_id = al.id
 			where am.is_deleted = 0
 			and am.id = #id#
-			order by am.create_time desc
+			order by am.update_time desc
  	</select>
- 	
- 	<insert id="insertNewArticle" parameterClass="map" >
+
+    <insert id="insertNewArticle" parameterClass="map" >
         insert into rebirth.article_message
         (article_name,
-         article_short_content,
-         article_content,
-         article_field_id,
-         article_create_time,
-         create_time,
-         update_time,
-         version)
+        article_short_content,
+        article_content,
+        article_field_id,
+        article_create_time,
+        create_time,
+        update_time,
+        version)
         VALUES
         (#articleName#,
-         #articleShortContent#,
-         #articleContent#,
-         #articleSortId#,
-         curdate(),
-         now(),
-         now(),
-         0)
- 	</insert>
+        #articleShortContent#,
+        #articleContent#,
+        #articleSortId#,
+        curdate(),
+        now(),
+        now(),
+        0)
+    </insert>
 
-   <select id="getArticleMonthList" resultClass="String">
+    <select id="getArticleMonthList" resultClass="String">
        select distinct(date_format(article_create_time,'%Y-%m'))
        from rebirth.article_message
+       order by update_time desc
    </select>
 
 
     <select id="findArticleWithPara" parameterClass="map" resultMap="articleBasic">
         select am.id,
-            am.article_name,
-            date_format(am.article_create_time,'%Y-%M-%d') as article_create_time,
-            am.article_short_content,
-            am.article_content,
-            am.article_comment_id,
-            am.article_field_id,
-            al.name as label_name
+        am.article_name,
+        date_format(am.article_create_time,'%Y-%M-%d') as article_create_time,
+        am.article_short_content,
+        am.article_content,
+        am.article_comment_id,
+        am.article_field_id,
+        al.name as label_name
         from rebirth.article_message am
         LEFT JOIN rebirth.article_label al
         on am.article_field_id = al.id
@@ -90,6 +91,6 @@
     </select>
 
 
- </sqlMap>
+</sqlMap>
 
 
