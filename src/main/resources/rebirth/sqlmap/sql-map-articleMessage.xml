@@ -31,6 +31,7 @@
 			on am.article_field_id = al.id
 			where am.is_deleted = 0
 			and am.id = #id#
+			order by am.create_time desc
  	</select>
  	
  	<insert id="insertNewArticle" parameterClass="map" >
