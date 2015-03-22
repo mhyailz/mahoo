@@ -3,7 +3,6 @@ package com.action;
 import com.dict.SearchParaMap;
 import com.dict.SearchTypeEnum;
 import com.model.Article;
-import com.model.ArticleLabel;
 import com.service.ArticleLabelService;
 import com.service.ArticleService;
 import com.utils.AESEncryptor;
@@ -17,7 +16,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.io.Serializable;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -42,7 +40,6 @@ public class HomePage implements Serializable {
         List<Article> articles =  articleService.findArticleWithPara(new SearchParaMap().getParaMap());
         return createReturnView(null,"article/index",articles);
     }
-
 
     @RequestMapping(value="s", method = RequestMethod.GET)
     public ModelAndView searchWithPara(@RequestParam(value = "st", required = true) Integer st,
