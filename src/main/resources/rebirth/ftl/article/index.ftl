@@ -149,7 +149,7 @@
             </li>
           </ul>
         </div>
-        <span id="to_the_top" class="glyphicon glyphicon-chevron-up"></span>
+        <div id="to_the_top" class="glyphicon glyphicon-chevron-up"></div>
       </div>
     </div>
   </div>

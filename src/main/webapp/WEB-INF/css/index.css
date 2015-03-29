@@ -92,9 +92,17 @@
     position: fixed;
     display: none;
     top: auto;
-    margin-left: 100px;
     bottom: 140px;
+    width: 50px;
+    height: 50px;
+    border: 1px dashed #ddd;
+    line-height: 47px;
+    text-align: center;
     cursor: pointer;
+    transition:.3s;
+}
+#to_the_top:hover {
+   line-height: 30px;
 }
 .CODE_snippets{
     margin-left:  auto !important;
@@ -112,4 +120,11 @@
 }
 .pull-right{
     display: none;
+}
+.list-group-item a{
+    transition:.3s;
+}
+.list-group-item a:hover{
+    text-shadow: 0 0 1px #555;
+    text-decoration: none;
 }
