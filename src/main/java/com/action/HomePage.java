@@ -13,8 +13,11 @@ import org.springframework.util.CollectionUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.DispatcherServlet;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.io.Serializable;
 import java.util.List;
 import java.util.Map;
@@ -91,7 +94,19 @@ public class HomePage implements Serializable {
         return createReturnView(null,"article/item",articles);
     }
 
+    @RequestMapping(value="file404", method = RequestMethod.GET)
+    public ModelAndView getFileNotFound(){
+        ModelAndView mv = new ModelAndView("article/404");
+        return mv;
+    }
 
+
+    /**
+     * @param mv 待返回的view
+     * @param pageUrl 页面URL
+     * @param articles 页面List
+     * @return 组装返回view
+     */
     private ModelAndView createReturnView(ModelAndView mv,String pageUrl,List<Article> articles){
         ModelAndView returnMv = mv;
         if(returnMv == null){
