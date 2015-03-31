@@ -63,7 +63,6 @@
               <span class="article-footer-ms">分类：</span>
               <span class="label label-success"><a
                       href="/s?st=2&v=${articleList.articleSortId}&n=1&so=${articleList.articleSortName?if_exists}">${articleList.articleSortName?if_exists}</a></span>
-            <#-- <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>&nbsp;&nbsp;0 -->
               <span class="glyphicon glyphicon-time"
                     aria-hidden="true"></span>&nbsp;&nbsp;${articleList.articleCreateTime?if_exists}
             </p>
@@ -75,35 +74,8 @@
         <img src="/img/404.gif" alt="没有页面信息"/>
       </div>
     </#if>
-      <nav class="page-break">
-      <#--
-          <ul class="pagination">
-            <li class="disabled">
-              <a href="javascript:void(0)" aria-label="Previous">
-                <span aria-hidden="true">&laquo;</span>
-              </a>
-            </li>
-            <li class="active"><a href="javascript:void(0)">1</a></li>
-            <li><a href="#">2</a></li>
-            <li><a href="#">3</a></li>
-            <li><a href="#">4</a></li>
-            <li><a href="#">5</a></li>
-            <li>
-              <a href="#" aria-label="Next">
-                <span aria-hidden="true">&raquo;</span>
-              </a>
-            </li>
-          </ul>
-          -->
-      </nav>
     </div>
     <div class="col-md-3">
-    <#--
-    <div class="input-group article-search">
-      <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" placeholder="search mahoo">
-      <span class="input-group-addon"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></span>
-    </div>
-    -->
       <div class="panel panel-default">
         <div class="panel-heading">
           所有标签&nbsp;&nbsp;<span class="glyphicon glyphicon-list" aria-hidden="true"></span>
@@ -161,7 +133,7 @@
   </div>
 </div>
 <div class="page-footer">
-  <p>&copy; 2015 mahoo, aHa</p>
+  <p>&copy; 2015 mahoo.me</p>
 </div>
 <script src="/js/jquery.scrollToTop.min.js"></script>
 <script>

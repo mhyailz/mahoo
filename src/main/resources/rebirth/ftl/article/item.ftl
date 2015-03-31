@@ -132,7 +132,7 @@
   </div>
 </div>
 <div class="page-footer">
-  <p>&copy; 2015 mahoo, aHa</p>
+  <p>&copy; 2015 mahoo.me</p>
 </div>
 <script>
   $(function () {
