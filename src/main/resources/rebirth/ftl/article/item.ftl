@@ -42,9 +42,15 @@
           <li>
             <a href="/s?st=2&v=${articleList.articleSortId}&n=1&so=${articleList.articleSortName?if_exists}">${articleList.articleSortName?if_exists}</a>
           </li>
-          <li><strong>${articleList.articleName?if_exists}</strong></li>
+          <li>${articleList.articleName?if_exists}</li>
         </ol>
         <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4>
+              <a href="./item?ids=${articleList.ids?if_exists}">
+              ${articleList_index + 1}、${articleList.articleName?if_exists}</a>
+            </h4>
+          </div>
           <div class="panel-body">${articleList.articleContent?if_exists}</div>
         </div>
       </#list>
