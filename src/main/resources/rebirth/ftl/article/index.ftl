@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-  <title>all left yesterday,the feature need progress!</title>
+  <title>Mahoo.me - welcome!</title>
   <!-- char code equals utf8 -->
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=Edge">

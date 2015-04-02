@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 <head>
   <title>
-      mahoo-
+      Mahoo.me-
         <#if articles?exists && articles?size &gt;0>
           <#list articles as articleList>
             ${articleList.articleName?if_exists}
