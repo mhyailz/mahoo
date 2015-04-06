@@ -18,7 +18,7 @@
 }
 
 .head-t, .content-bd {
-  width: 95%;
+  width: 95% !important;
   max-width: 2220px;
   margin: 0 auto !important;
 }
@@ -103,6 +103,7 @@
 }
 
 .label-success a:hover {
+  color: white;
   text-decoration: none;
 }
 

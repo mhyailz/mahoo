@@ -1,16 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-<head>
-  <title>Mahoo.me - welcome!</title>
-  <!-- char code equals utf8 -->
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
-  <link href="/img/favicon.png" rel="icon">
-  <link href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">
-  <link href="/css/index.css" rel="stylesheet">
-  <script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
-  <script src="http://cdn.bootcss.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-</head>
+<#include "/article/common/head.ftl" />
 <body class="ar-all">
 <header class="navbar navbar-default">
   <div class="container">
@@ -62,7 +52,7 @@
             <p class="other-massage">
               <span class="article-footer-ms">分类：</span>
               <span class="label label-success"><a
-                      href="/s?st=2&v=${articleList.articleSortId}&n=1&so=${articleList.articleSortName?if_exists}">${articleList.articleSortName?if_exists}</a></span>
+                  href="/s?st=2&v=${articleList.articleSortId}&n=1&so=${articleList.articleSortName?if_exists}">${articleList.articleSortName?if_exists}</a></span>
               <span class="glyphicon glyphicon-time"
                     aria-hidden="true"></span>&nbsp;&nbsp;${articleList.articleCreateTime?if_exists}
             </p>
@@ -76,19 +66,7 @@
     </#if>
     </div>
     <div class="col-md-3">
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          所有标签&nbsp;&nbsp;<span class="glyphicon glyphicon-list" aria-hidden="true"></span>
-        </div>
-        <div class="panel-body">
-        <#if articleLabels?exists && articleLabels?size &gt;0>
-          <#list articleLabels as articleLabelList>
-            <a class="label-diy"
-               href="/s?st=2&v=${articleLabelList.id}&n=1&so=${articleLabelList.labelName?if_exists}">${articleLabelList.labelName?if_exists}</a>
-          </#list>
-        </#if>
-        </div>
-      </div>
+      <#include "/article/common/right-label.ftl" />
       <div class="panel panel-default">
         <div class="panel-heading">
           联系
@@ -104,30 +82,14 @@
           </li>
           <li class="list-group-item">
             <span class="glyphicon glyphicon-qrcode" aria-hidden="true"></span>&nbsp;&nbsp;
-            <a href="javascript:void(0)" data-html="true" data-toggle="popover" data-trigger="hover" title="微信扫一扫"
+            <a href="javascript:void(0)" data-html="true" data-toggle="popover" data-trigger="hover"
+               title="微信扫一扫"
                data-content="<img src='http://mahoo.oss-cn-qingdao.aliyuncs.com/image/%E4%BA%8C%E7%BB%B4%E7%A0%81.gif' alt='二维码' >"
                data-placement="right">约吗！</a>
           </li>
-
         </ul>
       </div>
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          推荐网站&nbsp;&nbsp;<span class="glyphicon glyphicon-heart" aria-hidden="true"></span>
-        </div>
-        <ul class="list-group">
-          <li class="list-group-item">
-            <a href="http://shijue.me/home">视觉中国</a>
-            <a href="http://www.uisdc.com/">优设</a>
-            <a href="http://www.topit.me/">优美图</a>
-          </li>
-          <li class="list-group-item">
-            <a href="http://www.bootcss.com/">Bootstrap</a>
-            <a href="https://github.com/">Github</a>
-            <a href="http://www.oschina.net/">开源中国</a>
-          </li>
-        </ul>
-      </div>
+      <#include "/article/common/friend-website.ftl" />
       <div id="to_the_top" class="glyphicon glyphicon-chevron-up"></div>
     </div>
   </div>

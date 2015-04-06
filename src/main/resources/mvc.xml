@@ -40,7 +40,7 @@
     </bean>
     <bean id="freemarkerConfig" class="org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer">
 		<property name="templateLoaderPath">
-            <value>classpath:rebirth/ftl/</value>
+            <value>/WEB-INF/ftl/</value>
          </property>
 		<property name="freemarkerSettings">
 			<props>
