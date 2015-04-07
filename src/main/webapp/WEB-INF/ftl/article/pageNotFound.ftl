@@ -1,6 +1,7 @@
+<#-- @ftlroot "../" -->
 <!DOCTYPE html>
 <html lang="zh-CN">
-<#include "common/head.ftl" />
+<#include "/article/common/websiteHead.ftl" />
 <body class="ar-all">
   <div class="container" style="text-align: center;">
       <img src="/img/404.gif" alt="没有页面信息" />
