@@ -5,7 +5,9 @@ import com.model.ArticleLabelModel;
 import java.util.List;
 
 /**
- * Created by Administrator on 2015/3/1.
+ * Welcome you !
+ * author : mahongyao
+ * time   : 2015/4/7 - 11:27
  */
 public interface ArticleLabelDao {
 

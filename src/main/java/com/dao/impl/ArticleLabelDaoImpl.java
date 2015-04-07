@@ -8,6 +8,12 @@ import org.springframework.orm.ibatis.SqlMapClientTemplate;
 import java.util.List;
 
 /**
+ * Welcome you !
+ * author : mahongyao
+ * time   : 2015/4/7 - 11:27
+ */
+
+/**
  * Created by Administrator on 2015/3/1.
  */
 public class ArticleLabelDaoImpl implements ArticleLabelDao{

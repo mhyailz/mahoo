@@ -6,9 +6,9 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * 
- * @author mahongyao 2014.09.03
- *
+ * Welcome you !
+ * author : mahongyao
+ * time   : 2015/4/7 - 11:27
  */
 
 public interface ArticleDao {

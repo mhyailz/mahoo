@@ -11,6 +11,12 @@ import org.springframework.web.servlet.ModelAndView;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * Welcome you !
+ * author : mahongyao
+ * time   : 2015/4/7 - 11:27
+ */
+
 @Controller
 @RequestMapping("/backendEditor")
 public class BackendEditorAction {

@@ -4,8 +4,11 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Created by mahoo on 2015/3/3.
+ * Welcome you !
+ * author : mahongyao
+ * time   : 2015/4/7 - 11:27
  */
+
 public class SearchParaMap{
 
     private static final int pageSize = 10;
@@ -13,14 +16,10 @@ public class SearchParaMap{
     private Map paraMap;
 
     public SearchParaMap(){
-        Map map = new HashMap<String,Object>();
+        Map<String,Object> map = new HashMap<String,Object>();
         map.put("pageNo",0);
         map.put("PageSize",pageSize);
         this.paraMap = map;
-    }
-
-    public SearchParaMap( Map paraMap){
-        this.paraMap = paraMap;
     }
 
     public Map getParaMap() {

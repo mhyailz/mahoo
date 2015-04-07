@@ -9,6 +9,12 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * Welcome you !
+ * author : mahongyao
+ * time   : 2015/4/7 - 11:27
+ */
+
 public class ArticleDaoImpl implements ArticleDao {
 
     @Autowired

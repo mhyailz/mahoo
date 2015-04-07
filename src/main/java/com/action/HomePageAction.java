@@ -19,6 +19,12 @@ import java.io.Serializable;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * Welcome you !
+ * author : mahongyao
+ * time   : 2015/4/7 - 11:27
+ */
+
 @Controller
 @RequestMapping("/")
 public class HomePageAction implements Serializable {
@@ -36,7 +42,6 @@ public class HomePageAction implements Serializable {
     /** 文章列表 **/
     @RequestMapping(value="index", method = RequestMethod.GET)
     public ModelAndView initPage() {
-        ModelAndView mv = new ModelAndView("article/index");
         List<ArticleModel> articles =  articleService.findArticleWithPara(new SearchParaMap().getParaMap());
         return createReturnView(null,"article/articleHomePage",articles);
     }

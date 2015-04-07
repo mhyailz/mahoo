@@ -3,7 +3,9 @@ package com.model;
 import java.io.Serializable;
 
 /**
- * Created by Administrator on 2015/3/1.
+ * Welcome you !
+ * author : mahongyao
+ * time   : 2015/4/7 - 11:27
  */
 public class ArticleLabelModel implements Serializable {
 

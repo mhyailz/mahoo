@@ -3,6 +3,11 @@ package com.model;
 
 import java.io.Serializable;
 
+/**
+ * Welcome you !
+ * author : mahongyao
+ * time   : 2015/4/7 - 11:27
+ */
 public class ArticleModel implements Serializable {
 
   /**

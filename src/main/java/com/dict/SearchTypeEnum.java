@@ -1,47 +1,41 @@
 package com.dict;
 
 /**
- * Created by mahoo on 2015/3/2.
+ * Welcome you !
+ * author : mahongyao
+ * time   : 2015/4/7 - 11:27
  */
 public enum SearchTypeEnum {
 
-    monthPara(0,"monthType"),  // 通过月份查询
+  monthPara(0, "monthType"),  // 通过月份查询
 
-    keyWords(1,"keyWordsType"), //通过查询输入框
+  keyWords(1, "keyWordsType"), //通过查询输入框
 
-    articleLabel(2,"articleLabel"); // 通过标签
-
-
-    /**
-     * 类型ID
-     */
-    private int typeId;
-
-    /**
-     * 类型value
-     */
-    private String typeValue;
+  articleLabel(2, "articleLabel"); // 通过标签
 
 
+  /**
+   * 类型ID
+   */
+  private int typeId;
 
-    SearchTypeEnum(int typeId, String typeValue) {
-        this.typeId    = typeId;
-        this.typeValue = typeValue;
-    }
+  /**
+   * 类型value
+   */
+  private String typeValue;
 
-    public int getTypeId() {
-        return typeId;
-    }
 
-    public void setTypeId(int typeId) {
-        this.typeId = typeId;
-    }
+  SearchTypeEnum(int typeId, String typeValue) {
+    this.typeId = typeId;
+    this.typeValue = typeValue;
+  }
 
-    public String getTypeValue() {
-        return typeValue;
-    }
+  public int getTypeId() {
+    return typeId;
+  }
 
-    public void setTypeValue(String typeValue) {
-        this.typeValue = typeValue;
-    }
+  public String getTypeValue() {
+    return typeValue;
+  }
+
 }
