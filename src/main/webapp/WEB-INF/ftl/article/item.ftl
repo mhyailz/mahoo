@@ -1,3 +1,4 @@
+<#-- @ftlroot "../" -->
 <!DOCTYPE html>
 <html lang="zh-CN">
 <#include "/article/common/head.ftl" />
