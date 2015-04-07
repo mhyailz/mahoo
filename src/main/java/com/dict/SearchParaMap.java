@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Created by Administrator on 2015/3/3.
+ * Created by mahoo on 2015/3/3.
  */
 public class SearchParaMap{
 

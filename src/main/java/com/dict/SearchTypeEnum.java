@@ -1,7 +1,7 @@
 package com.dict;
 
 /**
- * Created by Administrator on 2015/3/2.
+ * Created by mahoo on 2015/3/2.
  */
 public enum SearchTypeEnum {
 

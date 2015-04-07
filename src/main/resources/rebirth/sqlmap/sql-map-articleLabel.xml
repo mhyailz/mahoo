@@ -4,7 +4,7 @@
     "http://ibatis.apache.org/dtd/sql-map-2.dtd">
  <sqlMap>
  	
- 	<typeAlias alias="articleLabel" type="com.model.ArticleLabel" />
+ 	<typeAlias alias="articleLabel" type="com.model.ArticleLabelModel" />
 	
 	<resultMap id="articleLabel" class="articleLabel">
 		<result property="id" column="id"/>

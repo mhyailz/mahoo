@@ -1,7 +1,7 @@
 package com.service.impl;
 
 import com.dao.ArticleLabelDao;
-import com.model.ArticleLabel;
+import com.model.ArticleLabelModel;
 import com.service.ArticleLabelService;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -17,12 +17,12 @@ public class ArticleLabelServiceImpl implements ArticleLabelService {
     private ArticleLabelDao articleLabelDao;
 
     @Override
-    public List<ArticleLabel> getAllLabels() {
+    public List<ArticleLabelModel> getAllLabels() {
         return articleLabelDao.getAllLabels();
     }
 
     @Override
-    public List<ArticleLabel> getLabelsById(List<Integer> ids) {
+    public List<ArticleLabelModel> getLabelsById(List<Integer> ids) {
         //TODO
         return null;
     }

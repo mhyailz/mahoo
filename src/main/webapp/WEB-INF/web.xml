@@ -35,6 +35,6 @@
     </welcome-file-list>
     <error-page>
         <error-code>404</error-code>
-        <location>/file404</location>
+        <location>/pageNotFound</location>
     </error-page>
 </web-app>

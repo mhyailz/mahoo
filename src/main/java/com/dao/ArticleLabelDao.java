@@ -1,6 +1,6 @@
 package com.dao;
 
-import com.model.ArticleLabel;
+import com.model.ArticleLabelModel;
 
 import java.util.List;
 
@@ -14,5 +14,5 @@ public interface ArticleLabelDao {
      *
      * @return
      */
-    public List<ArticleLabel> getAllLabels();
+    public List<ArticleLabelModel> getAllLabels();
 }

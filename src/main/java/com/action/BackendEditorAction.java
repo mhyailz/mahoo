@@ -13,7 +13,7 @@ import java.util.Map;
 
 @Controller
 @RequestMapping("/backendEditor")
-public class BackendEditor {
+public class BackendEditorAction {
 
 
     @Autowired

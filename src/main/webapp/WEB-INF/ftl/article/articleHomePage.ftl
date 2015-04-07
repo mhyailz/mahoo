@@ -1,7 +1,7 @@
 <#-- @ftlroot "../" -->
 <!DOCTYPE html>
 <html lang="zh-CN">
-<#include "/article/common/head.ftl" />
+<#include "/article/common/websiteHead.ftl" />
 <body class="ar-all">
 <header class="navbar navbar-default">
   <div class="container">
@@ -67,7 +67,7 @@
     </#if>
     </div>
     <div class="col-md-3">
-      <#include "/article/common/right-label.ftl" />
+      <#include "/article/common/labelsView.ftl" />
       <div class="panel panel-default">
         <div class="panel-heading">
           联系
@@ -90,7 +90,7 @@
           </li>
         </ul>
       </div>
-      <#include "/article/common/friend-website.ftl" />
+      <#include "/article/common/friendWebsite.ftl" />
       <div id="to_the_top" class="glyphicon glyphicon-chevron-up"></div>
     </div>
   </div>

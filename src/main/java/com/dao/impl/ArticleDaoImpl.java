@@ -1,14 +1,13 @@
 package com.dao.impl;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
+import com.dao.ArticleDao;
+import com.model.ArticleModel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.orm.ibatis.SqlMapClientTemplate;
 
-import com.dao.ArticleDao;
-import com.model.Article;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class ArticleDaoImpl implements ArticleDao {
 
@@ -17,7 +16,7 @@ public class ArticleDaoImpl implements ArticleDao {
 
 
 	@Override
-	public List<Article> getArticleById(Integer id) {
+	public List<ArticleModel> getArticleById(Integer id) {
 		Map<String, Object> map = new HashMap<String,Object>();
 		map.put("id", id);
 		return sqlMapClientTemplate.queryForList("findArticleMessageWithId",map);
@@ -35,7 +34,7 @@ public class ArticleDaoImpl implements ArticleDao {
 
 
     @Override
-    public List<Article> findArticleWithPara(Map<String, Object> map) {
+    public List<ArticleModel> findArticleWithPara(Map<String, Object> map) {
         return sqlMapClientTemplate.queryForList("findArticleWithPara", map);
     }
 

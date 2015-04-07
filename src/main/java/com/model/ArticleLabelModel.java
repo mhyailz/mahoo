@@ -5,7 +5,7 @@ import java.io.Serializable;
 /**
  * Created by Administrator on 2015/3/1.
  */
-public class ArticleLabel implements Serializable {
+public class ArticleLabelModel implements Serializable {
 
     /**
      * id

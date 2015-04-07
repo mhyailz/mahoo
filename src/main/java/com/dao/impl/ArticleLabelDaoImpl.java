@@ -1,7 +1,7 @@
 package com.dao.impl;
 
 import com.dao.ArticleLabelDao;
-import com.model.ArticleLabel;
+import com.model.ArticleLabelModel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.orm.ibatis.SqlMapClientTemplate;
 
@@ -16,7 +16,7 @@ public class ArticleLabelDaoImpl implements ArticleLabelDao{
     private SqlMapClientTemplate sqlMapClientTemplate;
 
     @Override
-    public List<ArticleLabel> getAllLabels() {
+    public List<ArticleLabelModel> getAllLabels() {
         return sqlMapClientTemplate.queryForList("getAllLabels");
     }
 

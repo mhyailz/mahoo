@@ -4,7 +4,7 @@ import java.util.List;
 import java.util.Map;
 
 import com.dao.ArticleDao;
-import com.model.Article;
+import com.model.ArticleModel;
 import com.service.ArticleService;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -16,7 +16,7 @@ public class ArticleServiceImpl implements ArticleService {
 	private ArticleDao articleDao;
 
 	@Override
-	public List<Article> getArticleById(Integer id) {
+	public List<ArticleModel> getArticleById(Integer id) {
 		return articleDao.getArticleById(id);
 	}
 
@@ -33,7 +33,7 @@ public class ArticleServiceImpl implements ArticleService {
     }
 
     @Override
-    public List<Article> findArticleWithPara(Map<String, Object> map) {
+    public List<ArticleModel> findArticleWithPara(Map<String, Object> map) {
         return articleDao.findArticleWithPara(map);
     }
 

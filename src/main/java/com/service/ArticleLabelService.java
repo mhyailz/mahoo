@@ -1,6 +1,6 @@
 package com.service;
 
-import com.model.ArticleLabel;
+import com.model.ArticleLabelModel;
 
 import java.util.List;
 
@@ -13,7 +13,7 @@ public interface ArticleLabelService {
      * 获取所有的标签
      * @return
      */
-    public List<ArticleLabel> getAllLabels();
+    public List<ArticleLabelModel> getAllLabels();
 
 
     /**
@@ -21,5 +21,5 @@ public interface ArticleLabelService {
      * @param ids
      * @return
      */
-    public List<ArticleLabel> getLabelsById(List<Integer> ids);
+    public List<ArticleLabelModel> getLabelsById(List<Integer> ids);
 }

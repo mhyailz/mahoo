@@ -1,10 +1,9 @@
 package com.service;
 
-import java.io.Serializable;
+import com.model.ArticleModel;
+
 import java.util.List;
 import java.util.Map;
-
-import com.model.Article;
 
 public interface ArticleService {
 
@@ -13,7 +12,7 @@ public interface ArticleService {
 	 * @param id
 	 * @return
 	 */
-	public List<Article> getArticleById(Integer id);
+	public List<ArticleModel> getArticleById(Integer id);
 
 	/**
 	 * 
@@ -32,5 +31,5 @@ public interface ArticleService {
      * @param map
      * @return
      */
-    public  List<Article> findArticleWithPara(Map<String, Object> map);
+    public  List<ArticleModel> findArticleWithPara(Map<String, Object> map);
 }

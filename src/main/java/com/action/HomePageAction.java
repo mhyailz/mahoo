@@ -2,7 +2,7 @@ package com.action;
 
 import com.dict.SearchParaMap;
 import com.dict.SearchTypeEnum;
-import com.model.Article;
+import com.model.ArticleModel;
 import com.service.ArticleLabelService;
 import com.service.ArticleService;
 import com.utils.AESEncryptor;
@@ -21,7 +21,7 @@ import java.util.Map;
 
 @Controller
 @RequestMapping("/")
-public class HomePage implements Serializable {
+public class HomePageAction implements Serializable {
 
     /** 密钥  **/
     private static final String SECRETKEY = "abcdefghijklmnop" ;
@@ -37,8 +37,8 @@ public class HomePage implements Serializable {
     @RequestMapping(value="index", method = RequestMethod.GET)
     public ModelAndView initPage() {
         ModelAndView mv = new ModelAndView("article/index");
-        List<Article> articles =  articleService.findArticleWithPara(new SearchParaMap().getParaMap());
-        return createReturnView(null,"article/index",articles);
+        List<ArticleModel> articles =  articleService.findArticleWithPara(new SearchParaMap().getParaMap());
+        return createReturnView(null,"article/articleHomePage",articles);
     }
 
     @RequestMapping(value="s", method = RequestMethod.GET)
@@ -53,7 +53,7 @@ public class HomePage implements Serializable {
                 map.put(searchType.getTypeValue(),v);
             }
         }
-        ModelAndView mv = new ModelAndView("article/index");
+        ModelAndView mv = new ModelAndView("article/articleHomePage");
         if(StringUtils.isNotEmpty(so)){
             try{
                 mv.addObject("so",new String(so.getBytes("ISO-8859-1"),"UTF-8"));
@@ -64,17 +64,17 @@ public class HomePage implements Serializable {
             mv.addObject("so",v);
         }
         map.put("pageNo",(n - 1) * (Integer)map.get("PageSize"));
-        List<Article> articles = articleService.findArticleWithPara(map);
-        return createReturnView(mv,"article/index",articles);
+        List<ArticleModel> articles = articleService.findArticleWithPara(map);
+        return createReturnView(mv,"article/articleHomePage",articles);
 
     }
 
     /** 详情页面 **/
     @RequestMapping(value="item", method = RequestMethod.GET)
     public ModelAndView getArticleById(@RequestParam(value = "ids", required = true) String ids){
-        ModelAndView mv = new ModelAndView("article/item");
+        ModelAndView mv = new ModelAndView("article/articleItemPage");
 
-        List<Article> articles = null;
+        List<ArticleModel> articles = null;
         if(StringUtils.isNotEmpty(ids)){
             Integer id = null;
             try{
@@ -88,12 +88,12 @@ public class HomePage implements Serializable {
                 articles = articleService.getArticleById(id);
             }
         }
-        return createReturnView(null,"article/item",articles);
+        return createReturnView(null,"article/articleItemPage",articles);
     }
 
-    @RequestMapping(value="file404", method = RequestMethod.GET)
+    @RequestMapping(value="pageNotFound", method = RequestMethod.GET)
     public ModelAndView getFileNotFound(){
-        ModelAndView mv = new ModelAndView("article/404");
+        ModelAndView mv = new ModelAndView("article/pageNotFound");
         return mv;
     }
 
@@ -104,14 +104,14 @@ public class HomePage implements Serializable {
      * @param articles 页面List
      * @return 组装返回view
      */
-    private ModelAndView createReturnView(ModelAndView mv,String pageUrl,List<Article> articles){
+    private ModelAndView createReturnView(ModelAndView mv,String pageUrl,List<ArticleModel> articles){
         ModelAndView returnMv = mv;
         if(returnMv == null){
             returnMv = new ModelAndView(pageUrl);
         }
         /** 把id转换加密 **/
         if(!CollectionUtils.isEmpty(articles)){
-            for(Article article : articles){
+            for(ArticleModel article : articles){
                 article.setIds(AESEncryptor.enc(article.getId().toString(), SECRETKEY));
             }
         }
