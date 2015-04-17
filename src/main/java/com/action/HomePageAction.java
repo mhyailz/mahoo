@@ -112,7 +112,7 @@ public class HomePageAction implements Serializable {
     private ModelAndView createReturnView(ModelAndView mv,String pageUrl,List<ArticleModel> articles){
         ModelAndView returnMv = mv;
         if(returnMv == null){
-            returnMv = new ModelAndView(pageUrl);
+            returnMv = new ModelAndView(pageUrl);;
         }
         /** 把id转换加密 **/
         if(!CollectionUtils.isEmpty(articles)){
