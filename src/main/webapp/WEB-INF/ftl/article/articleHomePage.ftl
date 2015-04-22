@@ -2,6 +2,7 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <#include "/article/common/websiteHead.ftl" />
+<script>;if(window.device.ios() || window.device.androidPhone()) window.location.href='http://m.mahoo.me';</script>
 <body class="ar-all">
 <header class="navbar navbar-default">
     <div class="container">
