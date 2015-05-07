@@ -52,7 +52,7 @@ public class HomePageAction extends BaseAction implements Serializable {
         Map<String, Object> map = new SearchParaMap().getParaMap();
         for (SearchTypeEnum searchType : SearchTypeEnum.values()) {
             if (st == searchType.getTypeId()) {
-                map.put(searchType.getTypeValue(), v);;
+                map.put(searchType.getTypeValue(), v);
             }
         }
         ModelAndView mv = new ModelAndView(Contants.homePageUrl);
