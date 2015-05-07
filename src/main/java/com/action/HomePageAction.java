@@ -24,7 +24,7 @@ import java.util.Map;
 
 @Controller
 @RequestMapping("/")
-public class HomePageAction extends BaseAction implements Serializable  {
+public class HomePageAction extends BaseAction implements Serializable {
 
 
     /**
@@ -52,7 +52,7 @@ public class HomePageAction extends BaseAction implements Serializable  {
         Map<String, Object> map = new SearchParaMap().getParaMap();
         for (SearchTypeEnum searchType : SearchTypeEnum.values()) {
             if (st == searchType.getTypeId()) {
-                map.put(searchType.getTypeValue(), v);
+                map.put(searchType.getTypeValue(), v);;
             }
         }
         ModelAndView mv = new ModelAndView(Contants.homePageUrl);
@@ -80,6 +80,7 @@ public class HomePageAction extends BaseAction implements Serializable  {
 
     /**
      * 详情页-h5页面
+     *
      * @param ids 页面主键ID
      * @return 页面view
      */
@@ -89,14 +90,12 @@ public class HomePageAction extends BaseAction implements Serializable  {
     }
 
     /**
-     *
      * @return
      */
     @RequestMapping(value = "pageNotFound", method = RequestMethod.GET)
     public ModelAndView getFileNotFound() {
-        return  new ModelAndView(Contants.pageNotFoundUrl);
+        return new ModelAndView(Contants.pageNotFoundUrl);
     }
 
 
-
-}  
+}
