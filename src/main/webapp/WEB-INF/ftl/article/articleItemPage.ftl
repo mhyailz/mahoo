@@ -74,11 +74,11 @@
         </div>
     </div>
 </div>
-<div class="page-footer">
-    <p>&copy; 2015 mahoo.me</p>
-</div>
+<#include "/article/common/pageFoot.ftl" />
 <script>
-
+    $(function () {
+        $('[data-toggle="popover"]').popover();
+    })
 </script>
 </body>
 </html>

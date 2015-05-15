@@ -75,9 +75,7 @@
         </div>
     </div>
 </div>
-<div class="page-footer">
-    <p>&copy; 2015 mahoo.me</p>
-</div>
+<#include "/article/common/pageFoot.ftl" />
 <script src="/js/jquery.scrollToTop.min.js"></script>
 <script>
     $(function () {
