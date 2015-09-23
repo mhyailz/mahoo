@@ -2,9 +2,7 @@ package com.action;
 
 import com.dict.SearchParaMap;
 import com.dict.SearchTypeEnum;
-import com.model.ArticleModel;
 import com.model.Contants;
-import com.utils.AESEncryptor;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,7 +11,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.io.Serializable;
-import java.util.List;
 import java.util.Map;
 
 /**
