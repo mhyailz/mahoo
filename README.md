@@ -1,4 +1,2 @@
-mahoo
-=====
 
-http://www.mahoo.me
+* `http://www.mahoo.me`
