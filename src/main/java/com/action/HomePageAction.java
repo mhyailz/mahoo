@@ -87,7 +87,7 @@ public class HomePageAction extends BaseAction implements Serializable {
     }
 
     /**
-     * @return
+     * @return 页面model
      */
     @RequestMapping(value = "pageNotFound", method = RequestMethod.GET)
     public ModelAndView getFileNotFound() {

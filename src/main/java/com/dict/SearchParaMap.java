@@ -13,7 +13,7 @@ public class SearchParaMap{
 
     private static final int pageSize = 10;
 
-    private Map paraMap;
+    private Map<String,Object> paraMap;
 
     public SearchParaMap(){
         Map<String,Object> map = new HashMap<String,Object>();
