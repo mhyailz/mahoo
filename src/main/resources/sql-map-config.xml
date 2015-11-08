@@ -8,8 +8,14 @@ PUBLIC "-//ibatis.apache.org//DTD SQL Map Config 2.0//EN"
 
 	<settings enhancementEnabled="true" maxTransactions="40" maxRequests="32" maxSessions="10" defaultStatementTimeout="60"/>
 
+    <!-- bolg sql map -->
     <sqlMap resource="rebirth/sqlmap/sql-map-articleMessage.xml" />
 
     <sqlMap resource="rebirth/sqlmap/sql-map-articleLabel.xml" />
+
+
+    <!-- app sql map -->
+    <sqlMap resource="rebirth/sqlmap/mahoo-app-sql-map-indexPage.xml" />
+
 
 </sqlMapConfig>

@@ -71,6 +71,7 @@
             <#include "/article/common/labelsView.ftl" />
             <#include "/article/common/contactModule.ftl" />
             <#include "/article/common/friendWebsite.ftl" />
+            <iframe src="http://rcm-cn.amazon-adsystem.com/e/cm?t=mahoo-23&o=28&p=8&l=as1&asins=B00G30JBSS&ref=tf_til&fc1=000000&IS2=1&lt1=_blank&m=amazon&lc1=0000FF&bc1=cccccc&bg1=FFFFFF&f=ifr" style="width:100%;height:240px;" scrolling="no" marginwidth="0" marginheight="0" frameborder="0"></iframe>
             <div id="to_the_top" class="glyphicon glyphicon-chevron-up"></div>
         </div>
     </div>

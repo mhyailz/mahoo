@@ -1,7 +1,7 @@
 package com.action;
 
 import com.model.ArticleModel;
-import com.model.Contants;
+import com.model.BlogContants;
 import com.service.ArticleLabelService;
 import com.service.ArticleService;
 import com.utils.AESEncryptor;
@@ -41,7 +41,7 @@ public class BaseAction {
         /** 把id转换加密 **/
         if (!CollectionUtils.isEmpty(articles)) {
             for (ArticleModel article : articles) {
-                article.setIds(AESEncryptor.enc(article.getId().toString(), Contants.secretKey));
+                article.setIds(AESEncryptor.enc(article.getId().toString(), BlogContants.secretKey));
             }
         }
         returnMv.addObject("articles", articles);
@@ -69,7 +69,7 @@ public class BaseAction {
             Integer id = null;
             try {
                 /** 解密ids **/
-                id = new Integer(AESEncryptor.dec(ids, Contants.secretKey));
+                id = new Integer(AESEncryptor.dec(ids, BlogContants.secretKey));
             } catch (Exception e) {
                 System.out.print("解密报错:" + e);
             }

@@ -17,6 +17,7 @@
 	<mvc:resources location="/WEB-INF/easyui/" mapping="/easyui/**" cache-period="31556926"/>
 	<mvc:resources location="/WEB-INF/ueditor/" mapping="/ueditor/**" cache-period="31556926"/>
 	<mvc:resources location="/WEB-INF/music-static/" mapping="/music-static/**" cache-period="31556926"/>
+    <mvc:resources location="/WEB-INF/mahoo-app/" mapping="/mahoo-app/**" cache-period="31556926"/>
     <mvc:resources location="/WEB-INF/" mapping="/**" cache-period="31556926"/>
 
 
