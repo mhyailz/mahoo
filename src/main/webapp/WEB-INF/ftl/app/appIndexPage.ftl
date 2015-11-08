@@ -15,8 +15,8 @@
 <div class="page">
     <!-- 标题栏 -->
     <header class="bar bar-nav">
-        <a class="icon icon-left pull-left"></a>
-        <a class="icon icon-settings pull-right"></a>
+        <a class="icon icon-menu pull-left"></a>
+        <a class="icon icon-edit pull-right"></a>
         <h1 class="title">买乎</h1>
     </header>
 
