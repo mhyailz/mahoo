@@ -4,13 +4,20 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns:p="http://www.springframework.org/schema/p"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
-	
+
+	<!-- blog spring config -->
 	<import resource="rebirth/spring/spring-resource-mysql.xml"/>
 	
 	<import resource="rebirth/spring/spring-resource-servics.xml"/>
 	
 	<import resource="rebirth/spring/spring-resource-dao.xml"/>
-	
+
+
+
+	<!-- mahoo app page -->
+	<import resource="rebirth/spring/spring-mahoo-app-resource-dao.xml"/>
+
+	<import resource="rebirth/spring/spring-mahoo-app-resource-servics.xml"/>
 
 </beans>
 

@@ -2,7 +2,7 @@ package com.action;
 
 import com.dict.SearchParaMap;
 import com.dict.SearchTypeEnum;
-import com.model.Contants;
+import com.model.BlogContants;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -29,13 +29,13 @@ public class HomePageAction extends BaseAction implements Serializable {
      */
     @RequestMapping(value = "index", method = RequestMethod.GET)
     public ModelAndView displayHomeView() {
-        return createReturnView(null, Contants.homePageUrl,
+        return createReturnView(null, BlogContants.homePageUrl,
                 findArticleWithPara(new SearchParaMap().getParaMap()));
     }
 
     @RequestMapping(value = "m", method = RequestMethod.GET)
     public ModelAndView initMPage() {
-        return createReturnView(null, Contants.mobileHomePageUrl,
+        return createReturnView(null, BlogContants.mobileHomePageUrl,
                 findArticleWithPara(new SearchParaMap().getParaMap()));
     }
 
@@ -52,7 +52,7 @@ public class HomePageAction extends BaseAction implements Serializable {
                 map.put(searchType.getTypeValue(), v);
             }
         }
-        ModelAndView mv = new ModelAndView(Contants.homePageUrl);
+        ModelAndView mv = new ModelAndView(BlogContants.homePageUrl);
         if (StringUtils.isNotEmpty(so)) {
             try {
                 mv.addObject("so", new String(so.getBytes("ISO-8859-1"), "UTF-8"));
@@ -63,7 +63,7 @@ public class HomePageAction extends BaseAction implements Serializable {
             mv.addObject("so", v);
         }
         map.put("pageNo", (n - 1) * (Integer) map.get("PageSize"));
-        return createReturnView(mv, Contants.homePageUrl, findArticleWithPara(map));
+        return createReturnView(mv, BlogContants.homePageUrl, findArticleWithPara(map));
 
     }
 
@@ -72,7 +72,7 @@ public class HomePageAction extends BaseAction implements Serializable {
      */
     @RequestMapping(value = "item", method = RequestMethod.GET)
     public ModelAndView displayItemViewById(@RequestParam(value = "ids", required = true) String ids) {
-        return createReturnView(null, Contants.itemPageUrl, getArticleByIdStr(ids));
+        return createReturnView(null, BlogContants.itemPageUrl, getArticleByIdStr(ids));
     }
 
     /**
@@ -83,7 +83,7 @@ public class HomePageAction extends BaseAction implements Serializable {
      */
     @RequestMapping(value = "mItem", method = RequestMethod.GET)
     public ModelAndView displayMobileItemViewById(@RequestParam(value = "ids", required = true) String ids) {
-        return createReturnView(null, Contants.mobileItemPageUrl, getArticleByIdStr(ids));
+        return createReturnView(null, BlogContants.mobileItemPageUrl, getArticleByIdStr(ids));
     }
 
     /**
@@ -91,7 +91,7 @@ public class HomePageAction extends BaseAction implements Serializable {
      */
     @RequestMapping(value = "pageNotFound", method = RequestMethod.GET)
     public ModelAndView getFileNotFound() {
-        return new ModelAndView(Contants.pageNotFoundUrl);
+        return new ModelAndView(BlogContants.pageNotFoundUrl);
     }
 
 

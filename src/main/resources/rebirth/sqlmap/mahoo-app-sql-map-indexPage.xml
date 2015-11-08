@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap
+    PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap>
+
+  <typeAlias alias="articleLabel" type="com.model.ArticleLabelModel"/>
+
+  <resultMap id="articleLabel" class="articleLabel">
+    <result property="id" column="id"/>
+    <result property="labelName" column="name"/>
+  </resultMap>
+
+  <select id="getIndex" resultMap="articleLabel">
+ 			select id,name
+ 			from rebirth.article_label
+ 			where is_deleted = 0
+ 	</select>
+
+</sqlMap>
+
+

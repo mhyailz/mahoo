@@ -7,7 +7,7 @@ import java.io.Serializable;
  * author : mahongyao
  * time   : 2015/4/22 - 16:12
  */
-public class Contants implements Serializable {
+public class BlogContants implements Serializable {
 
     /** 密钥 **/
     public static final String secretKey = "abcdefghijklmnop";
