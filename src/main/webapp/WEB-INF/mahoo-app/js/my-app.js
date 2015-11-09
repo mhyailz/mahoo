@@ -159,6 +159,7 @@ $(function(){
                 success : function(resp){
                     $.hidePreloader();
                     $.toast("登录成功！");
+                    $.router.loadPage('/app/index');
                 },
                 error : function(){
                     $.hidePreloader();
