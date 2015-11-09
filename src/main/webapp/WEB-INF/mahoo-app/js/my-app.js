@@ -142,6 +142,33 @@ $(function(){
                 return ;
             }
 
+
+            //校验成功，ajax传输数据
+            $.ajax({
+                type : 'GET',
+                url : '/app/login/loginByTelephoneAndPsw',
+                data : {
+                    tel : telValue,
+                    psw : pswValue
+                },
+                timeout: 3000,
+                async : true,
+                beforeSend : function(){
+                    $.showPreloader();
+                },
+                success : function(resp){
+                    $.hidePreloader();
+                    $.toast("登录成功！");
+                },
+                error : function(){
+                    $.hidePreloader();
+                    $.toast("服务异常，稍后再试！");
+                }
+
+
+            });
+
+
         });
 
     });

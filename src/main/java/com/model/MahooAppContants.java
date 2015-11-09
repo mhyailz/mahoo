@@ -18,5 +18,8 @@ public class MahooAppContants implements Serializable {
     /** Ap注册URL **/
     public static final String registerPageUrl = "app/appRegisterPage";
 
+    /** 我的详情页 **/
+    public static final String meItem = "app/appMeItemPage";
+
 
 }

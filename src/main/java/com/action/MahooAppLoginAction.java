@@ -22,34 +22,19 @@ import java.util.Map;
  */
 
 @Controller
-@RequestMapping("/app")
-public class MahooAppIndexAction extends MahooAppBaseAction implements Serializable {
+@RequestMapping("/app/login")
+public class MahooAppLoginAction extends MahooAppBaseAction implements Serializable {
 
     /**
-     * app首页 *
+     * 登录展示页 *
      */
-    @RequestMapping(value = "index", method = RequestMethod.GET)
+    @RequestMapping(value = "displayLoginView", method = RequestMethod.GET)
     public ModelAndView displayHomeView(HttpSession httpSession) {
-        Object oUser =  httpSession.getAttribute("mahooAppUser");
-        Map<String,Object> userMap = null;
-        if(oUser != null){
-            userMap = (Map<String, Object>) oUser;
-        }
-        return createReturnView(null, MahooAppContants.homePageUrl,userMap);
-    }
-
-    /**
-     * app登录 *
-     */
-    @RequestMapping(value = "login", method = RequestMethod.GET)
-    public ModelAndView appLoginView(HttpSession httpSession) {
         return createReturnView(null, MahooAppContants.loginPageUrl,null);
     }
 
-
     /**
      * 通过手机号和密码登录
-     *
      * @return
      */
     @RequestMapping(value = "loginByTelephoneAndPsw", method = RequestMethod.GET)
@@ -57,18 +42,11 @@ public class MahooAppIndexAction extends MahooAppBaseAction implements Serializa
     public Map<String, Object> loginByTelephoneAndPsw(@RequestParam(value = "tel", required = true) String tel,
                                                       @RequestParam(value = "psw", required = true) String psw,
                                                       HttpSession httpSession) {
-
-
         Long LongTel = NumberUtils.toLong(tel);
-
         Map<String, Object> resultMap = MahooAppLoginCodeEnum.dealLoginMsg(MahooAppLoginCodeEnum.loginSuccess);
-
         Map<String ,Object> user = new HashMap<String, Object>();
-
         user.put("tel",tel);
-
         httpSession.setAttribute("mahooAppUser", user);
-
         return resultMap;
     }
 
@@ -78,10 +56,7 @@ public class MahooAppIndexAction extends MahooAppBaseAction implements Serializa
      */
     @RequestMapping(value = "register", method = RequestMethod.GET)
     public ModelAndView appRegisterView(HttpSession httpSession) {
-
         Object o =  httpSession.getAttribute("mahooAppUser");
-
-
         return createReturnView(null, MahooAppContants.registerPageUrl, null);
     }
 
