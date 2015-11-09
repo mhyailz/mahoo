@@ -2,53 +2,54 @@
  * Created by mahoo on 2015/11/9.
  */
 
+/****************************************************** common start ******************************************/
+
+/**
+ * 返回事件
+ */
+function appGoBack(){
+    window.app.appGoBack();
+}
+
+/**
+ * 校验手机号
+ * @param tel
+ * @returns {boolean}
+ */
+function checkTelPhone(tel){
+
+    var telReg = /^(((13[0-9]{1})|(15[0-9]{1})|(18[0-9]{1}))+\d{8})$/;
+
+    if(telReg.test(tel)) {
+        return true;
+    }
+
+    return false;
+}
+
+/**
+ * 校验密码6-20个字母、数字、下划线
+ * @param psw
+ * @returns {boolean}
+ */
+function checkPassword(psw){
+
+    var pswReg = /^(\w){6,20}$/;
+
+    if (pswReg.test(psw)){
+        return true;
+    }
+
+    return false;
+}
+
+/****************************************************** common end ******************************************/
+
+
 
 $(function(){
 
     'user strict';
-
-    /****************************************************** common start ******************************************/
-
-    /**
-     * 返回事件
-     */
-    function appGoBack(){
-        window.app.appGoBack();
-    }
-
-    /**
-     * 校验手机号
-     * @param tel
-     * @returns {boolean}
-     */
-    function checkTelPhone(tel){
-
-        var telReg = /^(((13[0-9]{1})|(15[0-9]{1})|(18[0-9]{1}))+\d{8})$/;
-
-        if(telReg.test(tel)) {
-            return true;
-        }
-
-        return false;
-    }
-
-    /**
-     * 校验密码6-20个字母、数字、下划线
-     * @param psw
-     * @returns {boolean}
-     */
-    function checkPassword(psw){
-
-        var pswReg = /^(\w){6,20}$/;
-
-        if (pswReg.test(psw)){
-            return true;
-        }
-
-        return false;
-    }
-
-    /****************************************************** common end ******************************************/
 
 
     /****************************************************** index page  start ******************************************/
