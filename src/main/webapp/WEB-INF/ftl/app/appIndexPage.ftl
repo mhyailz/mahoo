@@ -12,7 +12,7 @@
 </head>
 <body class="theme-pink">
 <!-- page 容器 -->
-<div class="page">
+<div class="page" id="index-page">
     <!-- 标题栏 -->
     <header class="bar bar-nav">
         <a class="icon icon-menu pull-left"></a>

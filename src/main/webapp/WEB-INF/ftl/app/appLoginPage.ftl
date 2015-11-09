@@ -12,7 +12,7 @@
 </head>
 <body class="theme-pink">
 <!-- page 容器 -->
-<div class="page">
+<div class="page" id="login-page">
     <header class="bar bar-nav">
         <a class="icon icon-left pull-left back"></a>
         <h1 class="title">登录</h1>
