@@ -117,24 +117,28 @@ $(function(){
             //2，获取手机号的值,校验手机号
             var telValue = $('.login-telephone').val();
             if($.trim(telValue) == ''){
-                $('.login-msg').text('亲，登录的手机号不能为空哦！');
+                //$('.login-msg').text('亲，登录的手机号不能为空哦！');
+                $.toast("亲，登录的手机号不能为空哦！");
             }
 
             if(!checkTelPhone(telValue)){
-                $('.login-msg').text('亲，您输入的手机号格式不正确哦');
+                //$('.login-msg').text('亲，您输入的手机号格式不正确哦');
+                $.toast("亲，您输入的手机号格式不正确哦");
                 return ;
             }
 
             //3，校验密码框不能为空
             var pswValue = $('.login-password').val();
             if($.trim(telValue) == ''){
-                $('.login-msg').text('亲，登录密码不能为空哦！');
+                //$('.login-msg').text('亲，登录密码不能为空哦！');
+                $.toast("亲，登录密码不能为空哦！");
                 return ;
             }
 
             //4，校验密码格式6-20个字母、数字、下划线
             if(!checkPassword(pswValue)){
-                $('.login-msg').text('密码格式错误，密码长度6-18位的数字和字母');
+                //$('.login-msg').text('密码格式错误，密码长度6-18位的数字和字母');
+                $.toast("密码长度6-18位的数字和字母");
                 return ;
             }
 
