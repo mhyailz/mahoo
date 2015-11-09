@@ -159,8 +159,10 @@ $(function(){
                 },
                 success : function(resp){
                     $.hidePreloader();
-                    $.toast("登录成功！");
-                    $.router.loadPage('/app/index');
+                    $.toast("登录成功，正在跳转...");
+                    setTimeout(function () {
+                        $.router.loadPage('/app/index');
+                    }, 2000);
                 },
                 error : function(){
                     $.hidePreloader();
