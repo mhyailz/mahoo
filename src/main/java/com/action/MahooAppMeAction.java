@@ -23,6 +23,7 @@ public class MahooAppMeAction extends MahooAppBaseAction implements Serializable
     @RequestMapping(value = "item", method = RequestMethod.GET)
     public ModelAndView appLoginView(HttpSession httpSession) {
 
+        //能过session取user对象，当user对象为空时则跳转到登录页面
         Object o =  httpSession.getAttribute("mahooAppUser");
         String reditUrl = MahooAppContants.meItem;
         Map<String,Object> userMap = null;

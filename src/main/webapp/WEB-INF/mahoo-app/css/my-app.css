@@ -1,0 +1,36 @@
+/**
+ *
+ * create by mahoo 2015-11-10
+ *
+ */
+
+/** 终于要开始写一个页面的css了，我的详情页 **/
+
+.me-item-top-img-block{
+    border : 1px solid rgba(255, 255, 255, 0);
+    height: 5rem;
+}
+
+.me-item-top-text-block{
+    height: 1rem;
+}
+
+
+.img-icon{
+    width:1.45rem;
+    height: 1.45rem;
+}
+
+.jifen-icon{
+    background-image: url('/img/app/extends/jifen.png');
+}
+
+.order-icon{
+    background-image: url('/img/app/extends/order.png');
+}
+
+.me-item-me-logo img{
+    border-radius: 5rem;
+    width: 100%;
+    height: 100%;
+}

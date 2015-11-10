@@ -30,20 +30,10 @@
             <span class="icon icon-gift"></span>
             <span class="tab-label">爆品</span>
         </a>
-        <#if userModel?exists>
-            <#-- 当session对象中没有user时，跳转到我的详情页 -->
-            <a class="tab-item" href="/app/me/item">
-                <span class="icon icon-me"></span>
-                <span class="tab-label">我</span>
-            </a>
-        <#else>
-            <#-- 当session对象中没有user时，跳转到登录页面 -->
-            <a class="tab-item" href="/app/login/displayLoginView">
-                <span class="icon icon-me"></span>
-                <span class="tab-label">我</span>
-            </a>
-        </#if>
-
+        <a class="tab-item" href="/app/me/item">
+            <span class="icon icon-me"></span>
+            <span class="tab-label">我</span>
+        </a>
     </nav>
 
     <div class="content pull-to-refresh-content" data-ptr-distance="55">

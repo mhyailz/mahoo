@@ -162,7 +162,7 @@ $(function(){
                     $.hidePreloader();
                     $.toast("登录成功，正在跳转...");
                     setTimeout(function () {
-                        $.router.loadPage('/app/index');
+                        $.router.loadPage('#index-page');
                     }, 2000);
                 },
                 error : function(){
@@ -179,6 +179,21 @@ $(function(){
     });
 
     /****************************************************** login page  end ******************************************/
+
+    /****************************************************** me item page start****************************************/
+
+    $(document).on("pageInit","#me-item-page",function(e,id,page){
+        $(page).on('click','.button-logout',function(){
+            $.confirm('是否要退出当前登录',
+                function () {
+                    $.alert("退出OK！");
+                },
+                function () {
+                    return;
+                }
+            );
+        });
+    });
 
     $.init();
 
