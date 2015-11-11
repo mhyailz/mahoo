@@ -162,7 +162,7 @@ $(function(){
                     $.hidePreloader();
                     $.toast("登录成功，正在跳转...");
                     setTimeout(function () {
-                        $.router.loadPage('#index-page');
+                        $.router.back();
                     }, 2000);
                 },
                 error : function(){
