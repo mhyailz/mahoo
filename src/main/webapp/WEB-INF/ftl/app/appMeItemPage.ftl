@@ -17,7 +17,7 @@
         <a class="icon icon-left pull-left back"></a>
         <h1 class="title">我的地盘</h1>
     </header>
-    <div class="content" data-type="js">
+    <div class="content">
         <div class="content-padded grid-demo">
             <div class="row">
                 <div class="col-33 me-item-top-img-block"></div>
