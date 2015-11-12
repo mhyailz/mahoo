@@ -7,12 +7,16 @@
 /**
  * 返回事件
  */
-function appGoBack() {
-    //当模态框依然显示时，先关闭
-    if ($.closeModal) {
-        $.closeModal();
-    }
+function jsGoBack() {
     window.app.appGoBack();
+}
+
+/**
+ * 去掉模态框
+ *
+ */
+function closeAlertModule(){
+    $.closeModal();
 }
 
 /**
