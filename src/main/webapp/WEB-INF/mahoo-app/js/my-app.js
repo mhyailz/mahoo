@@ -231,6 +231,87 @@ $(function () {
         });
     });
 
+    /****************************************************** me item page end****************************************/
+
+    /******************************************************register page start****************************************/
+    $(document).on("pageInit", "#register-page", function (e, id, page) {
+
+        $(page).on('input', '.register-telephone', function () {
+            //获取手机号的输入值
+            var telValue = $(this).val();
+
+
+            //当输入的手机号为空时
+            if ($.trim(telValue) != '') {
+                $('.verification-message-button').removeClass('button-light');
+
+                //提示框消失
+                $('.login-msg').text('');
+
+            } else {
+
+                //提交按钮无法提交
+                $('.verification-message-button').addClass('button-light');
+            }
+        });
+
+        $(page).on('click', '.verification-message-button', function () {
+            var isEnable = $(this).attr('class').indexOf('button-light') == -1 ? true : false;
+
+            //1，当提交按钮是不可用状态时，直接返回
+            if (!isEnable) {
+                return;
+            }
+
+            //2，获取手机号的值,校验手机号
+            var telValue = $('.register-telephone').val();
+            if ($.trim(telValue) == '') {
+                $.toast("亲，登录的手机号不能为空哦！");
+            }
+
+            if (!checkTelPhone(telValue)) {
+                $.toast("亲，您输入的手机号格式不正确哦");
+                return;
+            }
+
+            //校验是否已经注册
+            $.ajax({
+                type: 'GET',
+                url: '/app/register/checkAlreadyHasTheTelephone',
+                data: {
+                    tel: telValue
+                },
+                timeout: 3000,
+                async: true,
+                beforeSend: function () {
+                    $.showPreloader();
+                },
+                success: function (resp) {
+                    $.hidePreloader();
+
+                    if(resp == null){
+                        $.toast("服务异常，稍后再试！");
+                        return;
+                    }
+                    //调用成功
+                    if(parseInt(resp.code) == 200){
+                        $.router.loadPage("/app/register/registerGetVerificationCode");  //加载ajax页面
+                    }else{
+                        $.hidePreloader();
+                        $.toast(resp.msg);
+                    }
+                },
+                error: function () {
+                    $.hidePreloader();
+                    $.toast("服务异常，稍后再试！");
+                }
+
+            });
+
+        });
+
+    });
+
     $.init();
 
 });

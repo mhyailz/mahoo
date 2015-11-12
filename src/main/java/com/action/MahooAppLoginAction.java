@@ -16,7 +16,6 @@ import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpSession;
 import java.io.Serializable;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -91,7 +90,12 @@ public class MahooAppLoginAction extends MahooAppBaseAction implements Serializa
         }
 
 
-        resultMap = MahooAppLoginCodeEnum.dealLoginMsg(MahooAppLoginCodeEnum.loginSuccess);
+        //登录成功
+        resultMap = MahooAppLoginCodeEnum.dealLoginMsg(MahooAppLoginCodeEnum.success);
+
+        //TODO 更新loginTimes lastLoginTime
+
+        //返回user对象
         httpSession.setAttribute("mahooAppUser", user);
         return resultMap;
     }
@@ -109,16 +113,5 @@ public class MahooAppLoginAction extends MahooAppBaseAction implements Serializa
         httpSession.setAttribute("mahooAppUser", null);
         return response;
     }
-
-
-    /**
-     * app注册*
-     */
-    @RequestMapping(value = "register", method = RequestMethod.GET)
-    public ModelAndView appRegisterView(HttpSession httpSession) {
-        Object o = httpSession.getAttribute("mahooAppUser");
-        return createReturnView(null, MahooAppContants.registerPageUrl, null);
-    }
-
 
 }

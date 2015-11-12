@@ -24,5 +24,6 @@ public class MahooAppContants implements Serializable {
     /** 我的详情页 **/
     public static final String meItem = "app/appMeItemPage";
 
+    public static final String registerGetVerificationCode = "app/verificationCodePage";
 
 }

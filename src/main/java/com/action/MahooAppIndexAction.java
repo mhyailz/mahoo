@@ -62,7 +62,7 @@ public class MahooAppIndexAction extends MahooAppBaseAction implements Serializa
 
         Long LongTel = NumberUtils.toLong(tel);
 
-        Map<String, Object> resultMap = MahooAppLoginCodeEnum.dealLoginMsg(MahooAppLoginCodeEnum.loginSuccess);
+        Map<String, Object> resultMap = MahooAppLoginCodeEnum.dealLoginMsg(MahooAppLoginCodeEnum.success);
 
         Map<String ,Object> user = new HashMap<String, Object>();
 
