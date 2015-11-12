@@ -2,6 +2,7 @@ package com.action;
 
 import com.dict.MahooAppLoginCodeEnum;
 import com.model.MahooAppContants;
+import com.model.MahooAppUserModel;
 import org.apache.commons.lang.math.NumberUtils;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -31,11 +32,11 @@ public class MahooAppIndexAction extends MahooAppBaseAction implements Serializa
     @RequestMapping(value = "index", method = RequestMethod.GET)
     public ModelAndView displayHomeView(HttpSession httpSession) {
         Object oUser =  httpSession.getAttribute("mahooAppUser");
-        Map<String,Object> userMap = null;
+        MahooAppUserModel user = null;
         if(oUser != null){
-            userMap = (Map<String, Object>) oUser;
+            user = (MahooAppUserModel) oUser;
         }
-        return createReturnView(null, MahooAppContants.homePageUrl,userMap);
+        return createReturnView(null, MahooAppContants.homePageUrl,user);
     }
 
     /**
@@ -80,7 +81,6 @@ public class MahooAppIndexAction extends MahooAppBaseAction implements Serializa
     public ModelAndView appRegisterView(HttpSession httpSession) {
 
         Object o =  httpSession.getAttribute("mahooAppUser");
-
 
         return createReturnView(null, MahooAppContants.registerPageUrl, null);
     }

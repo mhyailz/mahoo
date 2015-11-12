@@ -29,7 +29,7 @@
             <div class="row">
                 <div class="col-33 me-item-top-text-block"></div>
                 <div class="col-33 me-item-top-text-block">
-                    <em>${userModel.tel}</em>
+                    <em>${userModel.telephone}</em>
                 </div>
                 <div class="col-33 me-item-top-text-block"></div>
             </div>

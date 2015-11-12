@@ -19,24 +19,20 @@ public class ArticleServiceImpl implements ArticleService {
     @Autowired
 	private ArticleDao articleDao;
 
-	@Override
 	public List<ArticleModel> getArticleById(Integer id) {
 		return articleDao.getArticleById(id);
 	}
 
 
-	@Override
 	public void insertArticle(Map<String, Object> insertMap) {
 		articleDao.insertArticle(insertMap);
 		
 	}
 
-    @Override
     public List<String> getArticleMonthList() {
         return articleDao.getArticleMonthList();
     }
 
-    @Override
     public List<ArticleModel> findArticleWithPara(Map<String, Object> map) {
         return articleDao.findArticleWithPara(map);
     }

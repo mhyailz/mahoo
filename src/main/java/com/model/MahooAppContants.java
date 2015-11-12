@@ -9,6 +9,9 @@ import java.io.Serializable;
  */
 public class MahooAppContants implements Serializable {
 
+
+    public static final String secretKey = "abcdmhy199106";
+
     /** App主页URL **/
     public static final String homePageUrl = "app/appIndexPage";
 

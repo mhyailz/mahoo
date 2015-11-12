@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap
+        PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
+        "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap>
+
+    <typeAlias alias="appUser" type="com.model.MahooAppUserModel"/>
+
+    <resultMap id="baseUser" class="appUser">
+        <result property="id" column="id"/>
+        <result property="telephone" column="telephone"/>
+        <result property="password" column="password"/>
+        <result property="lastLoginTime" column="last_login_time"/>
+        <result property="loginTimes" column="login_times"/>
+        <result property="isDelete" column="is_delete"/>
+    </resultMap>
+
+    <select id="app_queryUserByTelephone" parameterClass="map" resultMap="baseUser">
+ 			select id,
+ 			       telephone,
+ 			       password,
+ 			       last_login_time,
+ 			       login_times,
+ 			       is_delete
+ 			from rebirth.mahoo_app_user
+ 			where telephone = #telephone#
+ 	</select>
+
+</sqlMap>
+
+

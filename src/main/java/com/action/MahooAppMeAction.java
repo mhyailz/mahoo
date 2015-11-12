@@ -1,6 +1,7 @@
 package com.action;
 
 import com.model.MahooAppContants;
+import com.model.MahooAppUserModel;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -26,13 +27,13 @@ public class MahooAppMeAction extends MahooAppBaseAction implements Serializable
         //能过session取user对象，当user对象为空时则跳转到登录页面
         Object o =  httpSession.getAttribute("mahooAppUser");
         String reditUrl = MahooAppContants.meItem;
-        Map<String,Object> userMap = null;
+        MahooAppUserModel user = null;
         //当前用户为空时，跳转到登录页面
         if(o == null){
             reditUrl = MahooAppContants.loginPageUrl;
         }else{
-            userMap = (Map<String, Object>) o;
+            user = (MahooAppUserModel) o;
         }
-        return createReturnView(null, reditUrl,userMap);
+        return createReturnView(null, reditUrl,user);
     }
 }

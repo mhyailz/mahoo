@@ -12,10 +12,15 @@ public enum MahooAppLoginCodeEnum {
     loginSuccess(200,"success"),
 
     //登录手机号不存在
-    telPhoneNotExist(300,"手机号不存在"),
+    telePhoneNotExist(300,"手机号不存在"),
 
     //密码不正确
-    pswNotRight(301,"密码和手机号不匹配");
+    pswNotRight(301,"密码和手机号不匹配"),
+
+    //数据出现错误
+    dataError(302,"数据出现错误！"),
+
+    telephoneAlreadyDelete(303,"手机号已经被逻辑删除！");
 
 
     public static Map<String,Object> dealLoginMsg(MahooAppLoginCodeEnum loginEnum){

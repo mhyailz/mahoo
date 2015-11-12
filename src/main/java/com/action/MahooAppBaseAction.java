@@ -1,5 +1,6 @@
 package com.action;
 
+import com.model.MahooAppUserModel;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.Map;
@@ -14,15 +15,15 @@ public class MahooAppBaseAction {
     /**
      * @param mv       待返回的view
      * @param pageUrl  页面URL
-     * @param userMap  userMap
+     * @param user  userMap
      * @return 组装返回view
      */
-    public ModelAndView createReturnView(ModelAndView mv, String pageUrl, Map<String,Object> userMap) {
+    public ModelAndView createReturnView(ModelAndView mv, String pageUrl, MahooAppUserModel user) {
         ModelAndView returnMv = mv;
         if (returnMv == null) {
             returnMv = new ModelAndView(pageUrl);
         }
-        returnMv.addObject("userModel", userMap);
+        returnMv.addObject("userModel", user);
         return returnMv;
     }
 

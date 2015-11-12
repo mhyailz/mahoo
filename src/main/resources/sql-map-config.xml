@@ -15,7 +15,7 @@ PUBLIC "-//ibatis.apache.org//DTD SQL Map Config 2.0//EN"
 
 
     <!-- app sql map -->
-    <sqlMap resource="rebirth/sqlmap/mahoo-app-sql-map-indexPage.xml" />
+    <sqlMap resource="rebirth/sqlmap/mahoo-app-sql-map-user.xml" />
 
 
 </sqlMapConfig>

@@ -7,12 +7,16 @@
 /**
  * 返回事件
  */
-function appGoBack() {
-    //当模态框依然显示时，先关闭
-    if ($.closeModal) {
-        $.closeModal();
-    }
+function jsGoBack() {
     window.app.appGoBack();
+}
+
+/**
+ * 去掉模态框
+ *
+ */
+function closeAlertModule(){
+    $.closeModal();
 }
 
 /**
@@ -163,10 +167,21 @@ $(function () {
                 },
                 success: function (resp) {
                     $.hidePreloader();
-                    $.toast("登录成功，正在跳转...");
-                    setTimeout(function () {
-                        $.router.back();
-                    }, 2000);
+
+                    if(resp == null){
+                        $.toast("服务异常，稍后再试！");
+                        return;
+                    }
+                    //调用成功
+                    if(parseInt(resp.code) == 200){
+                        $.toast("登录成功，正在跳转...");
+                        setTimeout(function () {
+                            $.router.back();
+                        }, 2000);
+                    }else{
+                        $.toast(resp.msg);
+                        return;
+                    }
                 },
                 error: function () {
                     $.hidePreloader();
@@ -190,6 +205,24 @@ $(function () {
             $.confirm('是否要退出当前登录',
                 function () {
                     $.alert("退出OK！");
+                    $.ajax({
+                        type : "GET",
+                        url : "/app/login/logout",
+                        beforeSend: function () {
+                            $.showPreloader();
+                        },
+                        success: function (resp) {
+                            $.hidePreloader();
+                            $.toast("成功退出...");
+                            setTimeout(function () {
+                                $.router.back();
+                            }, 500);
+                        },
+                        error: function () {
+                            $.hidePreloader();
+                            $.toast("服务异常，稍后再试！");
+                        }
+                    })
                 },
                 function () {
                     return;

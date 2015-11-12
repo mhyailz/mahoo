@@ -5,4 +5,7 @@
 	xmlns:p="http://www.springframework.org/schema/p"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
 
+
+	<bean id="mahooAppUserDao" class="com.dao.impl.MahooAppUserDaoImpl" />
+
 </beans>
