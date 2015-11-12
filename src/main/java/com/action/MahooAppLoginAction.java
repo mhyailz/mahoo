@@ -91,7 +91,12 @@ public class MahooAppLoginAction extends MahooAppBaseAction implements Serializa
         }
 
 
+        //登录成功
         resultMap = MahooAppLoginCodeEnum.dealLoginMsg(MahooAppLoginCodeEnum.loginSuccess);
+
+        //TODO 更新loginTimes lastLoginTime
+
+        //返回user对象
         httpSession.setAttribute("mahooAppUser", user);
         return resultMap;
     }
