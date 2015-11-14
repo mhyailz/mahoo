@@ -21,9 +21,9 @@
         <div class="list-block">
             <ul>
                 <!-- Text inputs -->
-                <li class="row">
+                <li>
                     <div class="item-content">
-                        <div class="item-media"><i class="icon icon-browser"></i></div>
+                        <div class="item-media"><i class="icon icon-app"></i></div>
                         <div class="item-inner">
                             <div class="item-input">
                                 <input type="hidden" value="${userModel.telephone?if_exists}"  />
