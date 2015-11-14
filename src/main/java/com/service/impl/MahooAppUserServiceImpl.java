@@ -17,4 +17,8 @@ public class MahooAppUserServiceImpl implements MahooAppUserService {
         return mahooAppUserDao.queryUserByTelephone(telephone);
     }
 
+    public void saveRegisterMessage(Long longTel, String psw, String randomVerificationCode) {
+         mahooAppUserDao.saveRegisterMessage(longTel,psw,randomVerificationCode);
+    }
+
 }

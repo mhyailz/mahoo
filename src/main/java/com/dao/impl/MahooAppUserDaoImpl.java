@@ -18,4 +18,12 @@ public class MahooAppUserDaoImpl extends BaseDao implements MahooAppUserDao {
         selectMap.put("telephone",telephone);
         return (MahooAppUserModel) this.queryForObject("app_queryUserByTelephone",selectMap);
     }
+
+    public void saveRegisterMessage(Long longTel, String psw, String randomVerificationCode) {
+        Map<String,Object> insertMap = new HashMap<String,Object>();
+        insertMap.put("telephone",longTel);
+        insertMap.put("password",psw);
+        insertMap.put("verificationCode",randomVerificationCode);
+        this.insert("saveRegisterMessage",insertMap);
+    }
 }

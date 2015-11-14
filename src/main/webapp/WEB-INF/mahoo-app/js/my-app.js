@@ -138,7 +138,7 @@ $(function () {
 
             //3，校验密码框不能为空
             var pswValue = $('.login-password').val();
-            if ($.trim(telValue) == '') {
+            if ($.trim(pswValue) == '') {
                 //$('.login-msg').text('亲，登录密码不能为空哦！');
                 $.toast("亲，登录密码不能为空哦！");
                 return;
@@ -274,12 +274,28 @@ $(function () {
                 return;
             }
 
-            //校验是否已经注册
+            //3，校验密码框不能为空
+            var pswValue = $('.register-password').val();
+            if ($.trim(pswValue) == '') {
+                //$('.login-msg').text('亲，登录密码不能为空哦！');
+                $.toast("亲，登录密码不能为空哦！");
+                return;
+            }
+
+            //4，校验密码格式6-20个字母、数字、下划线
+            if (!checkPassword(pswValue)) {
+                //$('.login-msg').text('密码格式错误，密码长度6-18位的数字和字母');
+                $.toast("密码长度6-18位的数字和字母");
+                return;
+            }
+
+            //校验是否已经注册，并发送短信验证码
             $.ajax({
                 type: 'GET',
-                url: '/app/register/checkAlreadyHasTheTelephone',
+                url: '/app/register/getTelephoneVerificationCode',
                 data: {
-                    tel: telValue
+                    tel: telValue,
+                    psw: pswValue
                 },
                 timeout: 3000,
                 async: true,
@@ -295,7 +311,8 @@ $(function () {
                     }
                     //调用成功
                     if(parseInt(resp.code) == 200){
-                        $.router.loadPage("/app/register/registerGetVerificationCode");  //加载ajax页面
+                        var hrefPage = "/app/register/registerGetVerificationCode?tel=" + telValue + "&psw=" + pswValue;
+                        $.router.loadPage(hrefPage);  //加载ajax页面
                     }else{
                         $.hidePreloader();
                         $.toast(resp.msg);
@@ -311,6 +328,54 @@ $(function () {
         });
 
     });
+
+
+    /******************************************************register page end****************************************/
+
+    /******************************************************verificationCode page start****************************************/
+    $(document).on("pageInit", "#verificationCode-Page", function (e, id, page) {
+
+        var manyTimesButton = $(page).find('.many-times-button');
+
+        var totalTimes = loopTimes =  90;
+        var times = setInterval(function(){
+            manyTimesButton.text(loopTimes + 's');
+            if( -- loopTimes == 0){
+                clearInterval(times);
+                manyTimesButton.removeClass('button-light').text('再次获取验证码');
+            }
+        },1000);
+
+        manyTimesButton.on("click",function(){
+            var _this = $(this);
+            if(_this.hasClass('button-light')){
+                return;
+            }
+
+            $.ajax({
+
+            });
+
+            _this.addClass('button-light');
+
+            loopTimes = totalTimes;
+            times = setInterval(function(){
+                manyTimesButton.text(loopTimes + 's');
+                if( -- loopTimes == 0){
+                    clearInterval(times);
+                    manyTimesButton.removeClass('button-light').text('再次获取验证码');
+                }
+            },1000);
+
+        })
+
+
+    });
+
+
+
+    /******************************************************verificationCode page end****************************************/
+
 
     $.init();
 

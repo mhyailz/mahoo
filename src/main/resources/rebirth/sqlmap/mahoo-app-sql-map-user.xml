@@ -25,6 +25,11 @@
  			from rebirth.mahoo_app_user
  			where telephone = #telephone#
  	</select>
+    
+    <insert id="saveRegisterMessage" parameterClass="map">
+        insert into rebirth.mahoo_app_register_user(telephone,password,verification_code,create_time,upate_time,is_delete)
+        VALUES (#telephone#,#password#,#verificationCode#,now(),now(),0)
+    </insert>
 
 </sqlMap>
 

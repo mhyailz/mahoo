@@ -31,6 +31,15 @@
                         </div>
                     </div>
                 </li>
+                <li>
+                    <div class="item-content">
+                        <div class="item-inner">
+                            <div class="item-input">
+                                <input class="register-password" type="password" placeholder="密码">
+                            </div>
+                        </div>
+                    </div>
+                </li>
             </ul>
         </div>
         <div class="content-block">

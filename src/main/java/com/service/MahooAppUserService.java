@@ -16,4 +16,11 @@ public interface MahooAppUserService {
     public MahooAppUserModel queryUserByTelephone(Long telephone);
 
 
+    /**
+     *
+     * @param longTel
+     * @param psw
+     * @param randomVerificationCode
+     */
+    void saveRegisterMessage(Long longTel, String psw, String randomVerificationCode);
 }

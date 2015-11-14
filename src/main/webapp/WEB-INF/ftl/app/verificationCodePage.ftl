@@ -25,6 +25,8 @@
                     <div class="item-content">
                         <div class="item-inner">
                             <div class="item-input">
+                                <input type="hidden" value="${userModel.telephone?if_exists}"  />
+                                <input type="hidden" value="${userModel.password?if_exists}"  />
                                 <input type="number" placeholder="验证码">
                             </div>
                         </div>
@@ -34,7 +36,7 @@
         </div>
         <div class="content-block">
             <div class="row">
-                <div class="col-50"><a href="#" class="button button-big button-fill button-light">90s</a></div>
+                <div class="col-50"><a href="#" class="button button-big button-fill button-light many-times-button">90s</a></div>
                 <div class="col-50"><a href="#" class="button button-big button-fill button-success">提交</a></div>
             </div>
         </div>
