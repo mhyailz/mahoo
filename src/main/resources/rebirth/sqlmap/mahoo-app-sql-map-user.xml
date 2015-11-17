@@ -29,6 +29,12 @@
     <insert id="saveRegisterMessage" parameterClass="map">
         insert into rebirth.mahoo_app_register_user(telephone,password,verification_code,create_time,upate_time,is_delete)
         VALUES (#telephone#,#password#,#verificationCode#,now(),now(),0)
+        on  DUPLICATE KEY  UPDATE
+        telephone = VALUES(telephone),
+        password = VALUES (password),
+        verification_code = VALUES (verification_code),
+        upate_time = VALUES (upate_time),
+        is_delete = VALUES (is_delete)
     </insert>
 
 </sqlMap>
