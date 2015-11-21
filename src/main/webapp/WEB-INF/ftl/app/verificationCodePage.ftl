@@ -1,15 +1,3 @@
-<!doctype html>
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>我的生活</title>
-    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <link rel="stylesheet" href="/mahoo-app/css/common/sm.min.css">
-    <link rel="stylesheet" href="/mahoo-app/css/common/sm-extend.min.css">
-    <link rel="stylesheet" href="/mahoo-app/css/my-app.css">
-</head>
 <body class="theme-pink">
 <!-- page 容器 -->
 <div class="page" id="verificationCode-Page">
@@ -43,10 +31,4 @@
         </div>
     </div>
 </div>
-
-<script type='text/javascript' src='/mahoo-app/js/common/zepto.min.js' charset='utf-8'></script>
-<script type='text/javascript' src='/mahoo-app/js/common/sm.min.js' charset='utf-8'></script>
-<script type='text/javascript' src='/mahoo-app/js/common/sm-extend.min.js' charset='utf-8'></script>
-<script type='text/javascript' src='/mahoo-app/js/my-app.js' charset='utf-8'></script>
 </body>
-</html>

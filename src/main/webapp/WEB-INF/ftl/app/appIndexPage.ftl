@@ -8,6 +8,8 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <link rel="stylesheet" href="/mahoo-app/css/common/sm.min.css">
     <link rel="stylesheet" href="/mahoo-app/css/common/sm-extend.min.css">
+    <#--<link rel="stylesheet" href="http://g.alicdn.com/msui/sm/0.5.3/css/sm.min.css">-->
+    <#--<link rel="stylesheet" href="http://g.alicdn.com/msui/sm/0.5.3/css/??sm.min.css,sm-extend.min.css">-->
     <link rel="stylesheet" href="/mahoo-app/css/my-app.css">
 </head>
 <body class="theme-pink">
@@ -93,6 +95,10 @@
 <script type='text/javascript' src='/mahoo-app/js/common/zepto.min.js' charset='utf-8'></script>
 <script type='text/javascript' src='/mahoo-app/js/common/sm.min.js' charset='utf-8'></script>
 <script type='text/javascript' src='/mahoo-app/js/common/sm-extend.min.js' charset='utf-8'></script>
+<#--<script type='text/javascript' src='http://g.alicdn.com/sj/lib/zepto/zepto.min.js' charset='utf-8'></script>-->
+<#--<script type='text/javascript' src='http://g.alicdn.com/msui/sm/0.5.3/js/sm.min.js' charset='utf-8'></script>-->
+<#--<script type='text/javascript' src='http://g.alicdn.com/msui/sm/0.5.3/js/??sm.min.js,sm-extend.min.js' charset='utf-8'></script>-->
+
 <script type='text/javascript' src='/mahoo-app/js/my-app.js' charset='utf-8'></script>
 </body>
 </html>
